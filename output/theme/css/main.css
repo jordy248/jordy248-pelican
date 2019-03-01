@@ -787,10 +787,10 @@ img {
 }
 
 #credits-social .icon {
-  font-size: 2em;
   transition: 333ms all ease;
 }
 #credits-social .icon a i {
+  font-size: 1.5em;
   transition: 333ms all ease;
 }
 #credits-social .icon:hover a i {

@@ -17,6 +17,10 @@
   <meta name="description" content="{{SITE_DESCRIPTION}}" />
   {% endif %}
 
+  {% if FAVICON %}
+  <link rel="icon" href="{{ FAVICON }}" sizes="32x32" />
+  {% endif %}
+
   <meta name="HandheldFriendly" content="True" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="referrer" content="origin" />
@@ -106,7 +110,8 @@
 
   <section id="wrapper">
     <a class="hidden-close"></a>
-      {% block content %}{% endblock content %}
+      {% block content %}
+      {% endblock content %}
       <!-- TODO : Body class -->
     <div id="body-class" style="display: none;" class="{{body_class}}"></div>
 
@@ -118,12 +123,11 @@
               rel="nofollow">Pelican</a></span>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4 text-center">
-          <span id="credits-locale" class="credits"><a class="an-link" href="">Made with <i class="icon fa fa-heart"></i>
-              in Baltimore</a></span>
+          <span id="credits-locale" class="credits"><a class="an-link" href="http://madewithloveinbaltimore.org/" title="Made with ♥ in Baltimore">Made with <i class="icon fa fa-heart"></i> in Baltimore</a></span>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4 text-center">
           <span id="credits-theme" class="credits">Theme <a class="an-link" href="https://github.com/jordy248/jordy248"
-              rel="nofollow">Martian Pelican</a></span>
+              rel="nofollow">Martian</a></span>
         </div>
       </div>
       <div class="row">

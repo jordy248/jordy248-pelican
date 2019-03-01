@@ -774,7 +774,6 @@ img {
 }
 #footer .credits .icon {
   margin: 0px 5px;
-  font-size: 2em;
 }
 #footer .credits .icon a {
   transition: 333ms all ease;
@@ -785,6 +784,17 @@ img {
 
 #credits-locale a .icon {
   color: #484A47 !important;
+}
+
+#credits-social .icon {
+  transition: 333ms all ease;
+}
+#credits-social .icon a i {
+  font-size: 1.5em;
+  transition: 333ms all ease;
+}
+#credits-social .icon:hover a i {
+  color: #D1D5DE;
 }
 
 .post {
@@ -1009,4 +1019,4 @@ img {
 ### ----------- ###
 */
 
-/*# sourceMappingURL=_main.scss.map */
+/*# sourceMappingURL=main.css.map */

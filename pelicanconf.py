@@ -127,7 +127,7 @@ PORT = 8000
 ### theme settings ###
 ### -------------- ###
 # directory containing theme
-THEME = 'themes/martian-pelican'
+THEME = 'themes/martian'
 # subdir in output dir where static files are placed
 THEME_STATIC_DIR = 'theme'
 # list of theme static paths to copy to THEME_STATIC_DIR
@@ -141,16 +141,19 @@ COLOR_SCHEME_CSS = 'github.css'
 ### ------------------------- ###
 MP_BOOTSTRAPPED = True
 MP_USE_FONTAWESOME = True
-CSS_OVERRIDE = ['{0}/{1}/css/_normalize.css'.format(SITEURL, THEME_STATIC_DIR), # normalize styles
-                '{0}/{1}/css/_main.css'.format(SITEURL, THEME_STATIC_DIR),       # main custom styles
-                'theme/css/_normalize.css',  # normalize styles (DEV VERSION)
-                'theme/css/_main.css'       # main custom styles (DEV VERSION)
+CSS_OVERRIDE = ['{0}/{1}/css/normalize.css'.format(SITEURL, THEME_STATIC_DIR), # normalize styles
+                '{0}/{1}/css/main.css'.format(SITEURL, THEME_STATIC_DIR),      # main custom styles
+                'theme/css/normalize.css',                                     # normalize styles (DEV VERSION)
+                'theme/css/main.css'                                           # main custom styles (DEV VERSION)
                ]               
 
-HEADER_COVER = '{0}/{1}/assets_images/crater.jpg'.format(SITEURL, THEME_STATIC_DIR) # hero, live
-HEADER_COVER = 'theme/assets_images/crater.jpg'.format(SITEURL, THEME_STATIC_DIR) # hero, dev
+FAVICON = 'theme/assets_images/favicon_jn.png'                                     # hero, dev
+FAVICON = '{0}/{1}/assets_images/favicon_jn.png'.format(SITEURL, THEME_STATIC_DIR) # hero, live
 
-SITESUBTITLE = 'PA Dutch Born. Detroit Raised. Baltimore Based.'
+HEADER_COVER = 'theme/assets_images/crater.jpg'                                     # hero, dev
+HEADER_COVER = '{0}/{1}/assets_images/crater.jpg'.format(SITEURL, THEME_STATIC_DIR) # hero, live
+
+SITESUBTITLE = 'PA Dutch Born. Michigan Raised. Baltimore Based.'
 
 # AUTHORS_BIO = {
 #   "arul": {

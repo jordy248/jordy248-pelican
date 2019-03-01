@@ -58,21 +58,21 @@
 
 #credits-social {
     .icon {
-        font-size: 2em;
         transition: 333ms all ease;
 
         a {
             i {
+                font-size: 1.5em;
                 transition: 333ms all ease;
             }
         }
-    
-    &:hover {
-        a {
-            i {
-                color: $color-white;
+
+        &:hover {
+            a {
+                i {
+                    color: $color-white;
+                }
             }
         }
-    }
     }
 }
