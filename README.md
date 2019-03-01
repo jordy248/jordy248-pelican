@@ -13,4 +13,7 @@ jordynelson.io is powered by [Pelican](https:///getpelican.com) and hosted by [G
         * Optionally: `pelican /path/to/your/content/ [-s path/to/your/settings.py]` if `PATH` (which specifies path to directory containing content to be published) isn't specified in the settings.py/pelicanconf.py file
         * Optionally: `pelican --write-selected output/posts/my-post-title.html` to only [publish certain content](http://docs.getpelican.com/en/stable/settings.html#writing-only-selected-content)
 4. The content will be written to `./output` (or wherever `OUTPUT_PATH` specifies in the settings.py/pelicanconf.py file)
-5. Move the contents of `jordy248/output` to `jordy248.github.io` and commit the changes to both `jordy248` and `jordy248.github.io`
+5. Preview changes:
+    * `cd output`
+    * `python -m http.server`
+6. Move the contents of `jordy248/output` to `jordy248.github.io` and commit the changes to both `jordy248` and `jordy248.github.io`
