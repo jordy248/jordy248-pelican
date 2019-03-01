@@ -53,8 +53,15 @@
       {% endif %}
   {% endfor %}
 
+  {% if MP_BOOTSTRAPPED %}
+  <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/bootstrap/bootstrap.css" type="text/css" rel="stylesheet" />
+  {% endif %}
+
+  {% if MP_USE_FONTAWESOME %}
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  {% endif %}
+
   <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css" type="text/css" rel="stylesheet" />
-  <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/main_styles.css" type="text/css" rel="stylesheet" />
 
   <!-- Code highlight color scheme -->
   {% if COLOR_SCHEME_CSS %}
@@ -103,6 +110,36 @@
       <!-- TODO : Body class -->
     <div id="body-class" style="display: none;" class="{{body_class}}"></div>
 
+    {% block footer %}
+    <footer id="footer" class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+          <span id="credits-software" class="credits">Published with <a class="an-link" href="https://github.com/getpelican/pelican"
+              rel="nofollow">Pelican</a></span>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+          <span id="credits-locale" class="credits"><a class="an-link" href="">Made with <i class="icon fa fa-heart"></i>
+              in Baltimore</a></span>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+          <span id="credits-theme" class="credits">Theme <a class="an-link" href="https://github.com/jordy248/jordy248"
+              rel="nofollow">Martian Pelican</a></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+          <span id="credits-theme" class="credits">&copy; 2019 Jordy Nelson</span>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+          <div id="credits-social" class="credits">
+            <span id="credits-social-linkedin" class="icon"><a href="https://www.linkedin.com/in/jordynelson/"><i class="fab fa-linkedin"></i></a></span>
+            <span id="credits-social-github" class="icon"><a href="htts://github.com/jordy248"><i class="fab fa-github"></i></a></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!--
     <footer id="footer">
       <div class="inner">
         <section class="credits">
@@ -125,6 +162,8 @@
         </section>
       </div>
     </footer>
+    -->
+    {% endblock footer %}
   </section>
 
   <script type="text/javascript" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/script.js"></script>

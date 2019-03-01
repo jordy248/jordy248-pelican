@@ -43,7 +43,7 @@ PAGINATION_PATTERNS = (
 )
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+RELATIVE_URLS = True
 
 STATIC_PATHS = ['assets']
 
@@ -109,19 +109,6 @@ GOOGLE_ANALYTICS = "UA-78411303-1"
 # Comments
 DISQUS_SITENAME = "jordynelson"
 
-### -------------- ###
-### theme settings ###
-### -------------- ###
-# directory containing theme
-THEME = 'themes/martian-pelican'
-# subdir in output dir where static files are placed
-THEME_STATIC_DIR = 'theme'
-# list of theme static paths to copy to THEME_STATIC_DIC
-THEME_STATIC_PATHS = ['static']
-
-COLOR_SCHEME_CSS = 'github.css'
-CSS_OVERRIDE = ['assets/css/myblog.css']
-
 ### --------------- ###
 ### output settings ###
 ### --------------- ###
@@ -136,6 +123,34 @@ SLUGIFY_SOURCE = 'title'
 # port used with `pelican --listen`
 PORT = 8000
 
+### -------------- ###
+### theme settings ###
+### -------------- ###
+# directory containing theme
+THEME = 'themes/martian-pelican'
+# subdir in output dir where static files are placed
+THEME_STATIC_DIR = 'theme'
+# list of theme static paths to copy to THEME_STATIC_DIR
+THEME_STATIC_PATHS = ['static',
+                      'assets'
+                     ]
+COLOR_SCHEME_CSS = 'github.css'
+
+### ------------------------- ###
+### additional theme settings ###
+### ------------------------- ###
+MP_BOOTSTRAPPED = True
+MP_USE_FONTAWESOME = True
+CSS_OVERRIDE = ['{0}/{1}/css/_normalize.css'.format(SITEURL, THEME_STATIC_DIR), # normalize styles
+                '{0}/{1}/css/_main.css'.format(SITEURL, THEME_STATIC_DIR),       # main custom styles
+                'theme/css/_normalize.css',  # normalize styles (DEV VERSION)
+                'theme/css/_main.css'       # main custom styles (DEV VERSION)
+               ]               
+
+HEADER_COVER = '{0}/{1}/assets_images/crater.jpg'.format(SITEURL, THEME_STATIC_DIR) # hero, live
+HEADER_COVER = 'theme/assets_images/crater.jpg'.format(SITEURL, THEME_STATIC_DIR) # hero, dev
+
+SITESUBTITLE = 'PA Dutch Born. Detroit Raised. Baltimore Based.'
 
 # AUTHORS_BIO = {
 #   "arul": {

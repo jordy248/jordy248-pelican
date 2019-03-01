@@ -4,7 +4,7 @@
     {{ super() }}
     {% include 'partials/og.html' %}
     {% include 'partials/jsonld.html' %}
-{% endblock %}
+{% endblock head %}
 
 {% if HEADER_COVER %}
   {% if HEADER_COVER|lower|truncate(4, True, '') == "http" %}
