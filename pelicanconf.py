@@ -135,6 +135,9 @@ THEME_STATIC_PATHS = ['static',
                       'assets'
                      ]
 COLOR_SCHEME_CSS = 'github.css'
+DISPLAY_PAGES_ON_MENU = False
+DISPLAY_CATEGORIES_ON_MENU = False
+MENUITEMS = {'about': '/about'}
 
 ### ------------------------- ###
 ### additional theme settings ###

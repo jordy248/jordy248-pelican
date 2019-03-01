@@ -799,11 +799,13 @@ img {
 
 .post {
   text-align: center;
+  font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif;
 }
 .post .post-title {
   color: #E88873;
 }
 .post .post-title a {
+  font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif;
   color: #E88873;
   text-decoration: none;
   position: relative;

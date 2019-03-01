@@ -3,7 +3,7 @@
   <div class="nav-wrapper">
     <p class="nav-label">Menu</p>
     <ul>
-      {% for title, link in MENUITEMS %}
+      {% for title, link in MENUITEMS.items() %}
           <li><a href="{{ link }}" role="presentation">{{ title }}</a></li>
       {% endfor %}
 
