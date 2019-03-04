@@ -1,10 +1,11 @@
-Title: Hello, World!
-Date: 2019-02-28 08:29
-Modified: 2019-02-28 08:29
+Title: Testing
+Date: 2019-03-01 08:29
+Modified: 2019-03-01 08:29
 Category: Test
 Tags: pelican, test
-Slug: hello-world
+Slug: testing
+Cover: theme/assets_images/galaxy.jpg
 Authors: Jordy Nelson
-Summary: Hello, World!
+Summary: This is a test.
 
-Hello, World!
+Just a test.

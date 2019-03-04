@@ -156,7 +156,7 @@ FAVICON = '{0}/{1}/assets_images/favicon_jn.png'.format(SITEURL, THEME_STATIC_DI
 HEADER_COVER = 'theme/assets_images/crater.jpg'                                     # hero, dev
 HEADER_COVER = '{0}/{1}/assets_images/crater.jpg'.format(SITEURL, THEME_STATIC_DIR) # hero, live
 
-SITESUBTITLE = 'PA Dutch Born. Michigan Raised. Baltimore Based.'
+SITESUBTITLE = 'Michigan Raised. Baltimore Based.'
 
 # AUTHORS_BIO = {
 #   "arul": {

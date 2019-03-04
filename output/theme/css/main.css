@@ -802,11 +802,10 @@ img {
   font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif;
 }
 .post .post-title {
+  font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif;
   color: #E88873;
 }
 .post .post-title a {
-  font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif;
-  color: #E88873;
   text-decoration: none;
   position: relative;
   color: #E88873;
