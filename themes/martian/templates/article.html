@@ -96,7 +96,7 @@
         </span>
         <!-- TODO : Modified check -->
         {% if article.modified %}
-            <span class="post-meta"> | Updated on {{ article.locale_modified }}</span>
+            <span class="post-meta"> | Updated {{ article.locale_modified }}</span>
         {% endif %}
         {% if selected_cover %}
             <div class="post-cover cover" style="background-image: url('{{ selected_cover }}')">
@@ -107,6 +107,17 @@
         {% endif %}
       </div>
     </header>
+    <!-- ##### begin cover photo credits ##### -->
+    {% if article.cover_credits %}
+    <div class="cover-credits">
+      <div class="inner">
+        <span>
+          {{ article.cover_credits }}
+        </span>
+      </div>
+    </div>
+    <!-- ##### end cover photo credits ##### -->
+    {% endif %}
 {% endblock header %}
 
 {% block content %}
