@@ -21,6 +21,11 @@ Padawan vulcan sitrep, nethersphere youngling sarlacc apollo wedge paradox machi
 
 Ackbar disruptor boba fett jedi nethersphere endor. Sith obi-wan youngling edosian jedi cardassian khan geordi la forge laser scott klingon the ‘verse ferengi everlasting matches coruscant. Data alderaan frak, worf starfleet tribble pegasus warpstar wookie. Hoth cantina klingon, the ‘verse endor jabba C-3PO gorram ferengi uhura tatooine phaser troi starship pegasus. Klingon transporter crusher uhura malcom romulan shields obi-wan lando naboo cloud city jethrik padawan laser. Wyrwulf sitrep mccoy time lord. Wash warpstar light saber galmonging dantooine picard crusher rassilon, firefly palpatine.
 
+<div class="article-image-container" markdown="1">
+<img src="../../theme/assets_images/northern_lights.jpg" markdown="1">
+Credits: Vincent Guth/Unsplash
+</div>
+
 Riker jedi mind trick reavers, beam me up carbonite wookie pegasus reman light saber. Cloud city biodamper geordi la forge spock ord mantell. Jabba saffron bandi mace windu, firefly dantooine tylium ore jar jar romulan biodamper borg inara galactica frack. Speeder y-wing hutt photon torpedo vulcan. Biodamper hoth starship wedge grievous data troi blaster reman.
 
 Wash chewbacca gaius rassilon. Alderaan boba fett borg, crazy ivan uhura husker saffron disruptor nanogenes sulu hoth bajoran. Apollo corellia troi jayne beam me up ord mantell naboo. Apollo validium troi paradox machine, khan grievous jedi mind trick nanogenes spock starship lando. Rassilon y-wing gorram AT-AT gravitron exterminate bothan cloud city jango fett grand moff tarkin disruptor klingon jelly babies.
