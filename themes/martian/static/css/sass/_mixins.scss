@@ -179,7 +179,10 @@ $parallax-ios         : true !default;
   z-index: $distance * 1000;
 }
 
-// @include parallax-init;
+// usage:
+//@include parallax-init; // must run this initially to init
+//@include parallax(.15); // add this mix-in to elements to create parallax effect
+// have to also rework theme parallax js on cover photos
 
 // End of magic parallax mixins
 
