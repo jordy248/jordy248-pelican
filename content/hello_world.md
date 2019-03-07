@@ -13,7 +13,7 @@ Hello, World!
 
 Ipsum Blaster bat’leth spock laser maul starbuck cylon nethersphere jethrik jar jar inara landspeeder luke. Fodder mccoy dynatrope bat’leth wyrwulf inara cantina. Chekov the empire strikes back validium luke gorram, galmonging anakin dagobah sulu. Chekov cloud city transporter photon torpedo ewok, bantha reavers tatooine galactica leia everlasting matches light saber rassilon frack. C-3PO rassilon worf bajoran landspeeder photon torpedo.
 
-<div class="article-pq-container" markdown="1">
+<div class="article-content-container article-pq-container" markdown="1">
 Ipsum Blaster bat’leth spock laser maul starbuck cylon nethersphere jethrik jar jar
 </div>
 
@@ -21,9 +21,9 @@ Padawan vulcan sitrep, nethersphere youngling sarlacc apollo wedge paradox machi
 
 Ackbar disruptor boba fett jedi nethersphere endor. Sith obi-wan youngling edosian jedi cardassian khan geordi la forge laser scott klingon the ‘verse ferengi everlasting matches coruscant. Data alderaan frak, worf starfleet tribble pegasus warpstar wookie. Hoth cantina klingon, the ‘verse endor jabba C-3PO gorram ferengi uhura tatooine phaser troi starship pegasus. Klingon transporter crusher uhura malcom romulan shields obi-wan lando naboo cloud city jethrik padawan laser. Wyrwulf sitrep mccoy time lord. Wash warpstar light saber galmonging dantooine picard crusher rassilon, firefly palpatine.
 
-<div class="article-image-container" markdown="1">
-<img src="../../theme/assets_images/northern_lights.jpg" markdown="1">
-Credits: Vincent Guth/Unsplash
+<div class="article-content-container article-image-container" markdown="1">
+<img src="../../theme/assets_images/northern_lights.jpg" markdown="1" />
+Vincent Guth/Unsplash
 </div>
 
 Riker jedi mind trick reavers, beam me up carbonite wookie pegasus reman light saber. Cloud city biodamper geordi la forge spock ord mantell. Jabba saffron bandi mace windu, firefly dantooine tylium ore jar jar romulan biodamper borg inara galactica frack. Speeder y-wing hutt photon torpedo vulcan. Biodamper hoth starship wedge grievous data troi blaster reman.

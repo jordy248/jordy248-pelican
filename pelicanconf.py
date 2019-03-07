@@ -74,17 +74,15 @@ AUTHOR_URL = 'author/{slug}'
 AUTHOR_SAVE_AS = 'author/{slug}/index.html'
 AUTHORS_SAVE_AS = 'authors.html'
 
-### Plugins
+### ------- ###
+### Plugins ###
+### ------- ###
+PLUGINS = ['sitemap',
+           'neighbors'
+]
+PLUGIN_PATHS = ['pelican-plugins']
 
-# PLUGIN_PATHS = [
-#   'pelican-plugins'
-# ]
 
-# PLUGINS = [
-#   'sitemap',
-#   'neighbors',
-#   'assets'
-# ]
 
 # Sitemap
 SITEMAP = {
