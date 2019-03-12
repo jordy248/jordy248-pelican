@@ -99,10 +99,8 @@ SITEMAP = {
     }
 }
 
-
-
 # Analytics
-GOOGLE_ANALYTICS = "UA-78411303-1"
+GOOGLE_ANALYTICS = "UA-00000-0"
 
 # Comments
 DISQUS_SITENAME = "jordynelson"
