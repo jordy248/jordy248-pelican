@@ -168,14 +168,14 @@
 
 .post-content {
     a {
-        border-bottom: 1px solid $color-red;
+        border-bottom: 1px solid $color-rust;
         
         &:hover {
-            color: $color-red;
+            color: $color-rust;
         }
 
         &:focus {
-            color: $color-red;
+            color: $color-rust;
         }
     }
 
@@ -257,23 +257,23 @@
         margin: 0 0.333em 0.666em 0;
         padding: 0.575em 1em;
         background: $color-white;
-        border: 1px solid $color-red;
+        border: 1px solid $color-rust;
         font-size: 0.75em;
         font-weight: 500;
         line-height: 1.333em;
         text-align: center;
         text-decoration: none;
-        color: $color-red;
+        color: $color-rust;
         border-radius: 2em;
         transition: all ease 0.3s;
         box-sizing: border-box;
 
         &:hover {
-            background: $color-red;
+            background: $color-rust;
             color: $color-white;            
         }
         &:focus {
-            background: $color-red;
+            background: $color-rust;
             color: $color-white;
         }
     }
@@ -379,12 +379,12 @@
     border-radius: 2em;
 
     &:hover {
-        color: $color-red;
-        border-color: $color-red;
+        color: $color-rust;
+        border-color: $color-rust;
     }
     &:focus {
-        color: $color-red;
-        border-color: $color-red;
+        color: $color-rust;
+        border-color: $color-rust;
     }
 }
 
@@ -423,12 +423,12 @@
     a {
         &:hover {
             i {
-                color: $color-red;
+                color: $color-rust;
             }
         }
         &:focus {
             i {
-                color: $color-red;
+                color: $color-rust;
             }
         }
     }

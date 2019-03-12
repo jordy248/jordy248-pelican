@@ -48,10 +48,20 @@
 ### end mixins ###
 ### ---------- ###
 */
+/* 
+temp
+*/
 @import url("reset.css");
 @import url("pygment.css");
 @import url("typogrify.css");
 @import url(//fonts.googleapis.com/css?family=Yanone+Kaffeesatz&subset=latin);
+.loading {
+  opacity: 0;
+}
+
+/*
+temp 
+*/
 html {
   font-family: "Raleway", Verdana, Arial, Helvetica, sans-serif;
   font-size: 18px;
@@ -3123,13 +3133,13 @@ html.menu-active,
 }
 
 .post-content a {
-  border-bottom: 1px solid #E88873;
+  border-bottom: 1px solid #A37774;
 }
 .post-content a:hover {
-  color: #E88873;
+  color: #A37774;
 }
 .post-content a:focus {
-  color: #E88873;
+  color: #A37774;
 }
 .post-content img {
   max-width: none;
@@ -3199,23 +3209,23 @@ html.menu-active,
   margin: 0 0.333em 0.666em 0;
   padding: 0.575em 1em;
   background: #fff;
-  border: 1px solid #E88873;
+  border: 1px solid #A37774;
   font-size: 0.75em;
   font-weight: 500;
   line-height: 1.333em;
   text-align: center;
   text-decoration: none;
-  color: #E88873;
+  color: #A37774;
   border-radius: 2em;
   transition: all ease 0.3s;
   box-sizing: border-box;
 }
 .post-tags a:hover {
-  background: #E88873;
+  background: #A37774;
   color: #fff;
 }
 .post-tags a:focus {
-  background: #E88873;
+  background: #A37774;
   color: #fff;
 }
 
@@ -3312,12 +3322,12 @@ html.menu-active,
   border-radius: 2em;
 }
 .post-comments-activate:hover {
-  color: #E88873;
-  border-color: #E88873;
+  color: #A37774;
+  border-color: #A37774;
 }
 .post-comments-activate:focus {
-  color: #E88873;
-  border-color: #E88873;
+  color: #A37774;
+  border-color: #A37774;
 }
 
 .activated .post-comments-activate {
@@ -3351,10 +3361,10 @@ html.menu-active,
   color: #D1D5DE;
 }
 .post-nav a:hover i {
-  color: #E88873;
+  color: #A37774;
 }
 .post-nav a:focus i {
-  color: #E88873;
+  color: #A37774;
 }
 
 .post-nav-next,

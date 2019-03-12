@@ -36,7 +36,7 @@ SOCIAL = (('Facebook', 'https://www.facebook.com/jordy.nelson248'),
           )
 
 # Pagination
-DEFAULT_PAGINATION = 3
+DEFAULT_PAGINATION = 5
 PAGINATION_PATTERNS = (
     (1, '{base_name}/', '{base_name}/index.html'),
     (2, '{base_name}/page/{number}/', '{base_name}/page/{number}/index.html'),
@@ -133,9 +133,9 @@ THEME_STATIC_PATHS = ['static',
                       'assets'
                      ]
 COLOR_SCHEME_CSS = 'github.css'
-DISPLAY_PAGES_ON_MENU = False
-DISPLAY_CATEGORIES_ON_MENU = False
-MENUITEMS = {'about': '/about'}
+DISPLAY_PAGES_ON_MENU = True
+DISPLAY_CATEGORIES_ON_MENU = True
+MENUITEMS = {'about': '/about.html'}
 
 ### ------------------------- ###
 ### additional theme settings ###
@@ -146,7 +146,12 @@ CSS_OVERRIDE = ['{0}/{1}/css/normalize.css'.format(SITEURL, THEME_STATIC_DIR), #
                 '{0}/{1}/css/main.css'.format(SITEURL, THEME_STATIC_DIR),      # main custom styles
                 'theme/css/normalize.css',                                     # normalize styles (DEV VERSION)
                 'theme/css/main.css'                                           # main custom styles (DEV VERSION)
-               ]               
+]    
+JS_OVERRIDE = ['{0}/{1}/js/script.js'.format(SITEURL, THEME_STATIC_DIR),    # normalize styles
+                '{0}/{1}/js/myscript.js'.format(SITEURL, THEME_STATIC_DIR), # main custom styles
+                'theme/js/script.js',                                       # normalize styles (DEV VERSION)
+                'theme/js/myscript.js'                                      # main custom styles (DEV VERSION)
+]              
 
 FAVICON = 'theme/assets_images/favicon_jn.png'                                     # hero, dev
 FAVICON = '{0}/{1}/assets_images/favicon_jn.png'.format(SITEURL, THEME_STATIC_DIR) # hero, live
@@ -156,13 +161,20 @@ HEADER_COVER = '{0}/{1}/assets_images/crater.jpg'.format(SITEURL, THEME_STATIC_D
 
 SITESUBTITLE = 'Michigan Raised. Baltimore Based.'
 
-# AUTHORS_BIO = {
-#   "arul": {
-#     "name": "Arul",
-#     "cover": "assets/images/avatar.png",
-#     "image": "assets/images/arul_author_cover.jpg",
-#     "website": "http://blog.arulraj.net",
-#     "location": "Chennai",
-#     "bio": "This is the place for a small biography with max 200 characters. Well, now 100 are left. Cool, hugh?"
-#   }
-# }
+# list of article.title to ignore in default pagination
+PAGINATION_IGNORE = ['404', 'About']
+
+### ------- ###
+### authors ###
+### ------- ###
+
+AUTHORS_BIO = {
+   "jordy": {
+     "name": "jordy",
+     "cover": "theme/assets_images/jordy.jpg",
+     "image": "theme/assets_images/jordy.jpg",
+     "website": "https://jordynelson.io",
+     "location": "Baltimore",
+     "bio": "This is the place for a small biography with max 200 characters. Well, now 100 are left. Cool, hugh?"
+   }
+ }

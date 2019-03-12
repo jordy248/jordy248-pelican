@@ -102,7 +102,7 @@
 
 </head>
 <!-- TODO : Body class -->
-<body class="home-template">
+<body class="home-template loading">
 
   {% include 'partials/navigation.html' %}
 
@@ -170,6 +170,7 @@
     {% endblock footer %}
   </section>
 
+  <script type="text/javascript" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/script.js"></script>
   <script type="text/javascript" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/script.js"></script>
 
   {% if JS_OVERRIDE %}
