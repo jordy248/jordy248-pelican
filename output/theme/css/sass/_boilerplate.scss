@@ -1639,11 +1639,13 @@ html.menu-active,
   z-index: 10;
   margin: 0;
   padding: 0;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: $font-family-headline;
+  color: $color-white;
   font-weight: 700;
   font-size: 2em;
   line-height: 1em;
   text-decoration: none;
+  text-shadow: 3px 3px 1px $color-rust;
 
   a {
     text-decoration: none;
@@ -1670,7 +1672,6 @@ html.menu-active,
     color: #fff;
   }
 }
-
 
 .blog-description {
   position: relative;

@@ -1647,11 +1647,13 @@ html.menu-active,
   z-index: 10;
   margin: 0;
   padding: 0;
-  font-family: "Fira Sans", sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif;
+  color: #fff;
   font-weight: 700;
   font-size: 2em;
   line-height: 1em;
   text-decoration: none;
+  text-shadow: 3px 3px 1px #A37774;
 }
 .blog-name a {
   text-decoration: none;
@@ -3129,6 +3131,9 @@ html.menu-active,
   margin: 0;
 }
 
+.post-content {
+  text-align: left;
+}
 .post-content a {
   border-bottom: 1px solid #A37774;
 }
@@ -3464,6 +3469,9 @@ html.menu-active,
   opacity: 0.5;
 }
 
+.article-content-container {
+  text-align: center;
+}
 .article-content-container:before {
   content: "";
   display: block;
@@ -3482,15 +3490,7 @@ html.menu-active,
   background: #D1D5DE;
   margin: auto auto;
 }
-
-.article-pq-container {
-  display: block;
-  padding: 5px 10px;
-}
-.article-pq-container p {
-  font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif;
-  font-size: 1.5em;
-  line-height: 1.25em;
+.article-content-container.an-grad {
   background: linear-gradient(270deg, #A37774, #5C6D70, #E88873);
   background-size: 600% 600%;
   -webkit-animation: gradient-animation 15s cubic-bezier(0.4, 0, 1, 1) infinite;
@@ -3536,12 +3536,15 @@ html.menu-active,
     background-position: 0% 50%;
   }
 }
-.article-pq-container p:before {
-  content: '"';
+
+.article-pq-container {
+  display: block;
+  padding: 5px 10px;
+}
+.article-pq-container p {
   font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif;
-  font-size: 5em;
-  position: absolute;
-  font-weight: 900;
+  font-size: 1.5em;
+  line-height: 1.25em;
 }
 
 .article-image-container {
