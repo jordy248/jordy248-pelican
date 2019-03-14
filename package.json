@@ -1,0 +1,29 @@
+{
+  "name": "jordy248",
+  "version": "1.0.0",
+  "description": "package.json for jordy248 pelican site",
+  "private": "true",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jordy248/jordy248.git"
+  },
+  "keywords": [
+    "jordy248",
+    "pelican",
+    "site"
+  ],
+  "author": "jordy nelson <jordynelson.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jordy248/jordy248/issues"
+  },
+  "homepage": "https://github.com/jordy248/jordy248#readme",
+  "dependencies": {
+    "mkdirp": "^0.5.1",
+    "uglifyjs": "^2.4.11"
+  }
+}

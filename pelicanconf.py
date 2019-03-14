@@ -82,8 +82,6 @@ PLUGINS = ['sitemap',
 ]
 PLUGIN_PATHS = ['pelican-plugins']
 
-
-
 # Sitemap
 SITEMAP = {
     'format': 'xml',
@@ -157,7 +155,7 @@ FAVICON = '{0}/{1}/assets_images/favicon_jn.png'.format(SITEURL, THEME_STATIC_DI
 HEADER_COVER = 'theme/assets_images/crater.jpg'                                     # hero, dev
 HEADER_COVER = '{0}/{1}/assets_images/crater.jpg'.format(SITEURL, THEME_STATIC_DIR) # hero, live
 
-SITESUBTITLE = '🐦 City, MD via 🚗 City, MI.'
+SITESUBTITLE = 'I\'m the subtitle'
 
 # list of article.title to ignore in default pagination
 PAGINATION_IGNORE = ['404', 'About']

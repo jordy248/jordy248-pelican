@@ -13,7 +13,7 @@ Hello, World!
 
 Ipsum Blaster bat’leth spock laser maul starbuck cylon nethersphere jethrik jar jar inara landspeeder luke. Fodder mccoy dynatrope bat’leth wyrwulf inara cantina. Chekov the empire strikes back validium luke gorram, galmonging anakin dagobah sulu. Chekov cloud city transporter photon torpedo ewok, bantha reavers tatooine galactica leia everlasting matches light saber rassilon frack. C-3PO rassilon worf bajoran landspeeder photon torpedo.
 
-<div class="article-content-container article-pq-container" markdown="1">
+<div class="article-content-container article-pq-container an-grad" markdown="1">
 Ipsum Blaster bat’leth spock laser maul starbuck cylon nethersphere jethrik jar jar
 </div>
 

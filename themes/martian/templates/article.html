@@ -221,6 +221,7 @@
                 </section>
                 {% endif %}
 
+                {% if 'neighbors' in PLUGINS %}
                 <aside class="post-nav">
                     {% if article.next_article %}
                     <a class="post-nav-next" href="{{ SITEURL }}/{{ article.next_article.url}}">
@@ -242,6 +243,7 @@
                     {% endif %}
                     <div class="clear"></div>
                 </aside>
+                {% endif %}
 
             </div>
         </article>
