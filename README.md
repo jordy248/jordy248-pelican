@@ -10,12 +10,18 @@ jordynelson.io is hosted by [GitHub Pages](https://pages.github.com/) and powere
 2. In the `jordy248` directory, make any changes to the Pelican configuration file, theme files, or content
     * Compile the Sass:
         * `sass themes/martian/static/css/sass/main.scss themes/martian/static/css/main.css`
+        * Or using npm script:
+            * `npm run compile-sass`
 3. In the `jordy248` directory, run Pelican to generate the site:
     * `pelican`
         * Optionally: `pelican /path/to/your/content/ [-s path/to/your/settings.py]` if `PATH` (which specifies path to directory containing content to be published) isn't specified in the settings.py/pelicanconf.py file
         * Optionally: `pelican --write-selected output/posts/my-post-title.html` to only [publish certain content](http://docs.getpelican.com/en/stable/settings.html#writing-only-selected-content)
+    * Or using npm script:
+        * `npm run compile-pelican`
 4. The content will be written to `./output` (or wherever `OUTPUT_PATH` specifies in the settings.py/pelicanconf.py file)
 5. Preview changes:
     * `cd output`
     * `python -m http.server`
+    * Or using npm script:
+        * `npm run-python-server`
 6. Move the contents of `jordy248/output` to `jordy248.github.io` and commit the changes to both `jordy248` and `jordy248.github.io`
