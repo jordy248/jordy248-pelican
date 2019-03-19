@@ -9,7 +9,8 @@
     "compile-sass": "node-sass ./themes/martian/static/css/sass/main.scss ./themes/martian/static/css/main.css --source-map=true",
     "compile-pelican": "rm output -r && pelican",
     "run-lite-server": "lite-server --config=./bs-config.json",
-    "run-python-server": "cd output && python -m http.server"
+    "run-python-server": "cd output && python -m http.server",
+    "compile-dev": "npm run compile-sass && npm run compile-pelican && npm run run-python-server"
   },
   "repository": {
     "type": "git",

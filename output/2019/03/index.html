@@ -58,9 +58,11 @@
 </head>
 <!-- TODO : Body class -->
 
-<body class="home-template">
-  <div class="loading sk-wandering-cubes">
-
+<body class="home-template loading">
+  <div class="spinner">
+    <div class="sk-rotating-plane"></div>
+  </div>
+  
 <nav id="menu">
   <a class="close-button">Close</a>
   <div class="nav-wrapper">
@@ -90,8 +92,8 @@
       </div>
     </header>    
 
-    <section id="wrapper">
-      <a class="hidden-close"></a>
+  <section id="wrapper">
+    <a class="hidden-close"></a>
   <article class="post">
     <div class="inner">
       <dl>
@@ -104,39 +106,38 @@
       </dl>
     </div>
   </article>
-      <!-- TODO : Body class -->
-      <div id="body-class" style="display: none;" class=""></div>
+    <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
 
-      <footer id="footer" class="container-fluid">
-        <div class="row">
-          <div class="col-xs-12 col-sm-6 col-md-4 text-center">
-            <span id="credits-software" class="credits">Published with <a class="an-link" href="https://github.com/getpelican/pelican"
-                rel="nofollow">Pelican</a></span>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-4 text-center">
-            <span id="credits-locale" class="credits"><a class="an-link" href="http://madewithloveinbaltimore.org/"
-                title="Made with ♥ in Baltimore">Made with <i class="icon fa fa-heart"></i> in Baltimore</a></span>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-4 text-center">
-            <span id="credits-theme" class="credits">Theme <a class="an-link" href="https://github.com/jordy248/jordy248"
-                rel="nofollow">Martian</a></span>
+    <footer id="footer" class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+          <span id="credits-software" class="credits">Published with <a class="an-link" href="https://github.com/getpelican/pelican"
+              rel="nofollow">Pelican</a></span>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+          <span id="credits-locale" class="credits"><a class="an-link" href="http://madewithloveinbaltimore.org/" title="Made with ♥ in Baltimore">Made
+              with <i class="icon fa fa-heart"></i> in Baltimore</a></span>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+          <span id="credits-theme" class="credits">Theme <a class="an-link" href="https://github.com/jordy248/jordy248"
+              rel="nofollow">Martian</a></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+          <span id="credits-theme" class="credits">&copy; 2019 Jordy Nelson</span>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+          <div id="credits-social" class="credits">
+            <span id="credits-social-linkedin" class="icon"><a href="https://www.linkedin.com/in/jordynelson/"><i class="fab fa-linkedin"></i></a></span>
+            <span id="credits-social-github" class="icon"><a href="htts://github.com/jordy248"><i class="fab fa-github"></i></a></span>
           </div>
         </div>
-        <div class="row">
-          <div class="col-xs-12 col-sm-6 col-md-4 text-center">
-            <span id="credits-theme" class="credits">&copy; 2019 Jordy Nelson</span>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-4 text-center">
-            <div id="credits-social" class="credits">
-              <span id="credits-social-linkedin" class="icon"><a href="https://www.linkedin.com/in/jordynelson/"><i
-                    class="fab fa-linkedin"></i></a></span>
-              <span id="credits-social-github" class="icon"><a href="htts://github.com/jordy248"><i class="fab fa-github"></i></a></span>
-            </div>
-          </div>
-        </div>
-      </footer>
+      </div>
+    </footer>
 
-      <!--
+    <!--
     <footer id="footer">
       <div class="inner">
         <section class="credits">
@@ -148,16 +149,16 @@
       </div>
     </footer>
     -->
-    </section>
+  </section>
 
-    <script type="text/javascript" src="../../theme/js/script.js"></script>
-    <script type="text/javascript" src="../../theme/js/script.js"></script>
+  <script type="text/javascript" src="../../theme/js/script.js"></script>
+  <script type="text/javascript" src="../../theme/js/script.js"></script>
 
-    <!-- Script specified by the user -->
-    <script type="text/javascript" src="https://jordynelson.io/theme/js/script.js"></script>
-    <script type="text/javascript" src="https://jordynelson.io/theme/js/myscript.js"></script>
-    <script type="text/javascript" src="../../theme/js/script.js"></script>
-    <script type="text/javascript" src="../../theme/js/myscript.js"></script>
+  <!-- Script specified by the user -->
+  <script type="text/javascript" src="https://jordynelson.io/theme/js/script.js"></script>
+  <script type="text/javascript" src="https://jordynelson.io/theme/js/myscript.js"></script>
+  <script type="text/javascript" src="../../theme/js/script.js"></script>
+  <script type="text/javascript" src="../../theme/js/myscript.js"></script>
     <!-- Global Site Tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-00000-0"></script>
     <script>
@@ -175,6 +176,6 @@
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 </script>
-  </div>
 </body>
+
 </html>

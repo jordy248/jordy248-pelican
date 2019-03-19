@@ -6,7 +6,7 @@
 ### ------------- ###
 */
 
-@import "./node_modules/spinkit/scss/spinners/4-wandering-cubes";
+@import "./node_modules/spinkit/scss/spinners/1-rotating-plane";
 @import url("reset.css");
 @import url("pygment.css");
 @import url("typogrify.css");
@@ -246,7 +246,8 @@ html {
 }
 
 body {
-  font-size: 2em / 1.5em; 
+  font-size: 2em;
+  line-height: 2em; 
   font-family: $font-family-body;
   font-weight: 400;
   color: #45484d;
@@ -255,10 +256,29 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 
-  .loading {
-    display: block;
-    width: 100vw;
-    height: 100vh;
+  .spinner {
+    display: none;
+    visibility: hidden;
+  }
+
+  &.loading {
+    background: #fff;
+    
+    .spinner {
+      display: inherit;
+      visibility: inherit;
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      z-index: 10000;
+      background: #fff;
+      overflow: hidden;
+
+      *[class^="sk-"] {
+        margin-top: 25%;
+        
+      }
+    }
   }
 }
 

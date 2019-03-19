@@ -55,46 +55,27 @@
 /*
  *  Usage:
  *
-      <div class="sk-wandering-cubes">
-        <div class="sk-cube sk-cube1"></div>
-        <div class="sk-cube sk-cube2"></div>
-      </div>
+      <div class="sk-rotating-plane"></div>
  *
  */
 @import url("reset.css");
 @import url("pygment.css");
 @import url("typogrify.css");
 @import url(//fonts.googleapis.com/css?family=Yanone+Kaffeesatz&subset=latin);
-.sk-wandering-cubes {
-  margin: 40px auto;
+.sk-rotating-plane {
   width: 40px;
   height: 40px;
-  position: relative; }
-  .sk-wandering-cubes .sk-cube {
-    background-color: #333;
-    width: 10px;
-    height: 10px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    animation: sk-wanderingCube 1.8s ease-in-out -1.8s infinite both; }
-  .sk-wandering-cubes .sk-cube2 {
-    animation-delay: -0.9s; }
+  background-color: #333;
+  margin: 40px auto;
+  animation: sk-rotatePlane 1.2s infinite ease-in-out; }
 
-@keyframes sk-wanderingCube {
+@keyframes sk-rotatePlane {
   0% {
-    transform: rotate(0deg); }
-  25% {
-    transform: translateX(30px) rotate(-90deg) scale(0.5); }
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg); }
   50% {
-    /* Hack to make FF rotate in the right direction */
-    transform: translateX(30px) translateY(30px) rotate(-179deg); }
-  50.1% {
-    transform: translateX(30px) translateY(30px) rotate(-180deg); }
-  75% {
-    transform: translateX(0) translateY(30px) rotate(-270deg) scale(0.5); }
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg); }
   100% {
-    transform: rotate(-360deg); } }
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg); } }
 
 /*
 ### ----------- ###
@@ -287,7 +268,8 @@ html {
   overflow-x: hidden; }
 
 body {
-  font-size: 2em / 1.5em;
+  font-size: 2em;
+  line-height: 2em;
   font-family: "Raleway", Verdana, Arial, Helvetica, sans-serif;
   font-weight: 400;
   color: #45484d;
@@ -295,10 +277,22 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden; }
-  body .loading {
-    display: block;
-    width: 100vw;
-    height: 100vh; }
+  body .spinner {
+    display: none;
+    visibility: hidden; }
+  body.loading {
+    background: #fff; }
+    body.loading .spinner {
+      display: inherit;
+      visibility: inherit;
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      z-index: 10000;
+      background: #fff;
+      overflow: hidden; }
+      body.loading .spinner *[class^="sk-"] {
+        margin-top: 25%; }
 
 a {
   color: #212226;
