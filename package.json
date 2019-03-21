@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/jordy248/jordy248#readme",
   "dependencies": {
+    "http": "0.0.0",
     "mkdirp": "^0.5.1",
     "sass": "^1.17.3",
     "uglifyjs": "^2.4.11"
