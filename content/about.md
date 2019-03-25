@@ -7,19 +7,19 @@ Slug: about
 Template: about
 Url: about
 Save_as: about.html
-Cover: theme/assets_images/galaxy.jpg
-Cover_Credits: Thom Schneider/Unsplash
+Cover: theme/assets_images/jellyfish.jpg
+Cover_Credits: Robert Zunikoff/Unsplash
 Authors: Jordy Nelson
 Summary: About
 
 Hi, I'm Jordy Nelson. I don't score touchdowns, but I do use technology and analytics to help service-minded organizations better pursue their missions.
 
 <div class="article-content-container article-pq-container" markdown="1">
-🐦 **City, MD** 
+🐦 **City, MD 🦀** 
 <br />
 via
 <br />
-🚗 **City, MI**
+🚗 **City, MI ✋**
 </div>
 
 Ipsum Blaster bat’leth spock laser maul starbuck cylon nethersphere jethrik jar jar inara landspeeder luke. Fodder mccoy dynatrope bat’leth wyrwulf inara cantina. Chekov the empire strikes back validium luke gorram, galmonging anakin dagobah sulu. Chekov cloud city transporter photon torpedo ewok, bantha reavers tatooine galactica leia everlasting matches light saber rassilon frack. C-3PO rassilon worf bajoran landspeeder photon torpedo.
