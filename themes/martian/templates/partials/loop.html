@@ -4,7 +4,7 @@
 
     {% for article in articles_page.object_list %}
 
-        {% if article.title not in PAGINATION_IGNORE %}
+        {% if article.title.lower() not in PAGINATION_IGNORE %}
         
             <article class="post">
                 <div class="inner">

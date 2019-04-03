@@ -66,6 +66,7 @@
     <header id="post-header" class="has-cover">
       <div class="inner">
         <nav id="navigation">
+          <!--
           {% if SITE_LOGO %}
             <span class="blog-logo">
                 <a href="{{ SITEURL }}/"><img src="{{SITE_LOGO}}" alt="Blog Logo" /></a>
@@ -75,6 +76,7 @@
                 <a class="home-button" href="{{ SITEURL }}/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
             </span>
           {% endif %}
+          -->
           <span id="menu-button" class="nav-button">
             <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
           </span>
@@ -223,7 +225,7 @@
 
                 {% if 'neighbors' in PLUGINS %}
                 <aside class="post-nav">
-                    {% if article.next_article %}
+                    {% if article.next_article and article.next_article.title.lower() not in PAGINATION_IGNORE %}
                     <a class="post-nav-next" href="{{ SITEURL }}/{{ article.next_article.url}}">
                         <section class="post-nav-teaser">
                             <i class="ic ic-arrow-left"></i>
@@ -232,7 +234,7 @@
                         </section>
                     </a>
                     {% endif %}
-                    {% if article.prev_article %}
+                    {% if article.prev_article and article.prev_article.title.lower() not in PAGINATION_IGNORE %}
                     <a class="post-nav-prev" href="{{ SITEURL }}/{{ article.prev_article.url}}">
                         <section class="post-nav-teaser">
                             <i class="ic ic-arrow-right"></i>

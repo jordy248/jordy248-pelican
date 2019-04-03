@@ -1,7 +1,19 @@
 <nav id="menu">
   <a class="close-button">Close</a>
   <div class="nav-wrapper">
-    <p class="nav-label">Menu</p>
+    <div class="nav-label">
+      {% if SITE_LOGO %}
+        <span class="blog-logo">
+            <a href="{{ SITEURL }}/"><img src="{{SITE_LOGO}}" alt="Blog Logo" /></a>
+        </span>
+      {% else %}
+        <div class="nav-home">
+          <a class="nav-home-link" href="{{ SITEURL }}">
+            <div class="nav-home-link-icon"></div>
+          </a>
+        </div>
+      {% endif %}
+      </div>
     <ul>
       {% for title, link in MENUITEMS.items() %}
           <li><a href="{{ link }}" role="presentation">{{ title }}</a></li>

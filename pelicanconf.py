@@ -160,7 +160,7 @@ HEADER_COVER = '{0}/{1}/assets_images/crater.jpg'.format(SITEURL, THEME_STATIC_D
 SITESUBTITLE = 'I\'m the subtitle'
 
 # list of article.title to ignore in default pagination
-PAGINATION_IGNORE = ['404', 'About']
+PAGINATION_IGNORE = ['404', 'about']
 
 ### ------- ###
 ### authors ###

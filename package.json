@@ -10,7 +10,8 @@
     "compile-pelican": "rm output -r && pelican",
     "run-lite-server": "lite-server --config=./bs-config.json",
     "run-python-server": "cd output && python -m http.server",
-    "compile-dev": "npm run compile-sass && npm run compile-pelican && npm run run-python-server"
+    "compile-dev": "npm run compile-sass && npm run compile-pelican && npm run run-python-server",
+    "copy-live": "Xcopy \"./output\" \"../jordy248.github.io\" /f /e /y"
   },
   "repository": {
     "type": "git",
