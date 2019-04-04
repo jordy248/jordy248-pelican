@@ -6,88 +6,6 @@
 ### ---------- ###
 */
 
-.center_abs {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-}
-
-.nav-home {
-  @extend .center_abs;
-  position: relative !important;
-  margin: 0px 0px !important;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: $color-darkgray;
-  overflow: hidden;
-  transform: translate3d(0), rotate(0deg);
-  transition: transform 350ms ease-out,
-              background 350ms ease-out;
-}
-.nav-home-link {
-  display: block;
-  height: 100%;
-}
-.nav-home-link-icon {
-  @extend .center_abs;
-  width: 25px;
-  height: 16px;
-  background: #FFFFFF;
-  top: 10px;
-  transform: translate3d(0);
-  transition: width 350ms ease-out, 
-              top 350ms ease-out;
-  &:before, &:after {
-    position: absolute;
-    content: '';
-    width: 0;
-    height: 0;
-    bottom: 100%;
-  }
-  &:before {
-    left: 0;
-    border-style: solid;
-    border-width: 0 12px 8px 12px;
-    border-color: transparent transparent #FFF transparent;
-    transform: translate3d(0);
-    transition: left 350ms ease-out, 
-                border-width 350ms ease-out;
-  }
-  &:after {
-    position: absolute;
-    content: '';
-    width: 10px;
-    height: 10px;
-    background: $color-darkgray;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    opacity: 1;
-    transition: opacity 350ms ease-out;
-  }
-}
-
-.nav-home:hover {
-  transform: rotate(-90deg);
-  background: $color-rust;
-  .nav-home-link-icon {
-    width: 9px;
-    top: 8px;
-    &:before {
-      left: -8px;
-      border-width: 0 12px 10px 12px;
-    }
-    &:after {
-      opacity: 0;
-    }
-  }
-}
-
 /*
 ### -------- ###
 ### END TEMP ###
@@ -1411,7 +1329,7 @@ html.menu-active,
   height: 100vh;
   top: 0;
   right: 0;
-  background: #f2f2f0;
+  background: $color-lightgray;
   border-left: 1px solid #e5e4e1;
   z-index: 400;
   overflow: hidden;
@@ -1422,8 +1340,8 @@ html.menu-active,
 
   .close-button {
     position: absolute;
-    width: 2em;
-    height: 2em;
+    width: 50px;
+    height: 50px;
     top: 0;
     right: 0.5em;
     margin: 1em;
@@ -1575,6 +1493,93 @@ html.menu-active,
       }
     }
 
+  }
+}
+
+.center_abs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.nav-home {
+  @extend .center_abs;
+  position: relative !important;
+  margin: 0px 0px !important;
+  width: 50px;
+  height: 50px;
+  border: 1px solid $color-teal;
+  border-radius: 50%;
+  background: $color-lightgray;
+  overflow: hidden;
+  transform: translate3d(0), rotate(0deg);
+  transition: transform 330ms ease-out,
+              background 330ms ease-out;
+}
+.nav-home-link {
+  display: block;
+  height: 100%;
+}
+.nav-home-link-icon {
+  @extend .center_abs;
+  width: 25px;
+  height: 16px;
+  background: $color-darkgray;
+  top: 10px;
+  transform: translate3d(0);
+  transition: width 330ms ease-out, 
+              top 330ms ease-out;
+  &:before, &:after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    bottom: 100%;
+  }
+  &:before {
+    left: 0;
+    border-style: solid;
+    border-width: 0 12px 8px 12px;
+    border-color: transparent transparent $color-darkgray transparent;
+    transform: translate3d(0);
+    transition: left 330ms ease-out, 
+                border-width 330ms ease-out;
+  }
+  &:after {
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: $color-lightgray;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: 1;
+    transition: opacity 330ms ease-out;
+  }
+}
+
+.nav-home:hover {
+  transform: rotate(-90deg);
+  background: transparent;
+  border: 1px solid $color-rust;
+  .nav-home-link-icon {
+    width: 9px;
+    top: 8px;
+    background: $color-rust;
+
+    &:before {
+      left: -8px;
+      border-width: 0 12px 10px 12px;
+      border-color: transparent transparent $color-rust transparent;
+    }
+    &:after {
+      opacity: 0;
+    }
   }
 }
 
@@ -1964,7 +1969,7 @@ html.menu-active,
     height: 100%;
     top: 0;
     right: 0;
-    background: #f2f2f0;
+    background: $color-lightgray;
     border-left: 1px solid #e5e4e1;
     z-index: 400;
     overflow: hidden;
@@ -1994,7 +1999,7 @@ html.menu-active,
   #menu .close-button:hover,
   #menu .close-button:focus {
     transform: rotate(180deg);
-    border-color: $color-red
+    border-color: $color-rust
   }
   #menu .close-button:after,
   #menu .close-button:before {
@@ -2012,7 +2017,7 @@ html.menu-active,
   #menu .close-button:hover:before,
   #menu .close-button:focus:after,
   #menu .close-button:focus:before {
-    background: $color-red
+    background: $color-rust;
   }
   #menu .close-button:after {
     transform: rotate(45deg)

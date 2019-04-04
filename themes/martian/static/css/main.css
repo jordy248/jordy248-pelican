@@ -52,78 +52,6 @@
 ### BEGIN TEMP ###
 ### ---------- ###
 */
-@import url("reset.css");
-@import url("pygment.css");
-@import url("typogrify.css");
-@import url(//fonts.googleapis.com/css?family=Yanone+Kaffeesatz&subset=latin);
-.center_abs, .nav-home, .nav-home-link-icon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto; }
-
-.nav-home {
-  position: relative !important;
-  margin: 0px 0px !important;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: #484A47;
-  overflow: hidden;
-  transform: translate3d(0), rotate(0deg);
-  transition: transform 350ms ease-out, background 350ms ease-out; }
-
-.nav-home-link {
-  display: block;
-  height: 100%; }
-
-.nav-home-link-icon {
-  width: 25px;
-  height: 16px;
-  background: #FFFFFF;
-  top: 10px;
-  transform: translate3d(0);
-  transition: width 350ms ease-out,  top 350ms ease-out; }
-  .nav-home-link-icon:before, .nav-home-link-icon:after {
-    position: absolute;
-    content: '';
-    width: 0;
-    height: 0;
-    bottom: 100%; }
-  .nav-home-link-icon:before {
-    left: 0;
-    border-style: solid;
-    border-width: 0 12px 8px 12px;
-    border-color: transparent transparent #FFF transparent;
-    transform: translate3d(0);
-    transition: left 350ms ease-out,  border-width 350ms ease-out; }
-  .nav-home-link-icon:after {
-    position: absolute;
-    content: '';
-    width: 10px;
-    height: 10px;
-    background: #484A47;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    opacity: 1;
-    transition: opacity 350ms ease-out; }
-
-.nav-home:hover {
-  transform: rotate(-90deg);
-  background: #815350; }
-  .nav-home:hover .nav-home-link-icon {
-    width: 9px;
-    top: 8px; }
-    .nav-home:hover .nav-home-link-icon:before {
-      left: -8px;
-      border-width: 0 12px 10px 12px; }
-    .nav-home:hover .nav-home-link-icon:after {
-      opacity: 0; }
-
 /*
 ### -------- ###
 ### END TEMP ###
@@ -143,6 +71,10 @@
       </div>
  *
  */
+@import url("reset.css");
+@import url("pygment.css");
+@import url("typogrify.css");
+@import url(//fonts.googleapis.com/css?family=Yanone+Kaffeesatz&subset=latin);
 .sk-wandering-cubes {
   margin: 40px auto;
   width: 40px;
@@ -1227,7 +1159,7 @@ html.menu-active,
   height: 100vh;
   top: 0;
   right: 0;
-  background: #f2f2f0;
+  background: #D9DBDE;
   border-left: 1px solid #e5e4e1;
   z-index: 400;
   overflow: hidden;
@@ -1237,8 +1169,8 @@ html.menu-active,
   transition: all ease-out 0.25s; }
   #menu .close-button {
     position: absolute;
-    width: 2em;
-    height: 2em;
+    width: 50px;
+    height: 50px;
     top: 0;
     right: 0.5em;
     margin: 1em;
@@ -1342,6 +1274,78 @@ html.menu-active,
       #menu li a i.active a {
         color: #000;
         font-weight: 500; }
+
+.center_abs, .nav-home, .nav-home-link-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto; }
+
+.nav-home {
+  position: relative !important;
+  margin: 0px 0px !important;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #5C6D70;
+  border-radius: 50%;
+  background: #D9DBDE;
+  overflow: hidden;
+  transform: translate3d(0), rotate(0deg);
+  transition: transform 330ms ease-out, background 330ms ease-out; }
+
+.nav-home-link {
+  display: block;
+  height: 100%; }
+
+.nav-home-link-icon {
+  width: 25px;
+  height: 16px;
+  background: #484A47;
+  top: 10px;
+  transform: translate3d(0);
+  transition: width 330ms ease-out,  top 330ms ease-out; }
+  .nav-home-link-icon:before, .nav-home-link-icon:after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    bottom: 100%; }
+  .nav-home-link-icon:before {
+    left: 0;
+    border-style: solid;
+    border-width: 0 12px 8px 12px;
+    border-color: transparent transparent #484A47 transparent;
+    transform: translate3d(0);
+    transition: left 330ms ease-out,  border-width 330ms ease-out; }
+  .nav-home-link-icon:after {
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: #D9DBDE;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: 1;
+    transition: opacity 330ms ease-out; }
+
+.nav-home:hover {
+  transform: rotate(-90deg);
+  background: transparent;
+  border: 1px solid #815350; }
+  .nav-home:hover .nav-home-link-icon {
+    width: 9px;
+    top: 8px;
+    background: #815350; }
+    .nav-home:hover .nav-home-link-icon:before {
+      left: -8px;
+      border-width: 0 12px 10px 12px;
+      border-color: transparent transparent #815350 transparent; }
+    .nav-home:hover .nav-home-link-icon:after {
+      opacity: 0; }
 
 /*
 ###############################################################################
@@ -1657,7 +1661,7 @@ html.menu-active,
     height: 100%;
     top: 0;
     right: 0;
-    background: #f2f2f0;
+    background: #D9DBDE;
     border-left: 1px solid #e5e4e1;
     z-index: 400;
     overflow: hidden;
@@ -1684,7 +1688,7 @@ html.menu-active,
   #menu .close-button:hover,
   #menu .close-button:focus {
     transform: rotate(180deg);
-    border-color: #E88873; }
+    border-color: #815350; }
   #menu .close-button:after,
   #menu .close-button:before {
     position: absolute;
@@ -1700,7 +1704,7 @@ html.menu-active,
   #menu .close-button:hover:before,
   #menu .close-button:focus:after,
   #menu .close-button:focus:before {
-    background: #E88873; }
+    background: #815350; }
   #menu .close-button:after {
     transform: rotate(45deg); }
   #menu .close-button:before {
@@ -2679,6 +2683,38 @@ html.menu-active,
 ### ----------- ###
 ### end article ###
 ### ----------- ###
+*/
+/*
+### ----------- ###
+### begin about ###
+### ----------- ###
+*/
+.toolbox {
+  width: 100%;
+  text-align: center;
+  vertical-align: top; }
+  .toolbox h2,
+  .toolbox h3 {
+    text-align: inherit; }
+  .toolbox div {
+    vertical-align: inherit; }
+  .toolbox div[class^="toolbox-"] {
+    display: inline-block;
+    width: 40%;
+    margin: 0 2.5%; }
+  .toolbox ul li {
+    position: relative;
+    margin: 5px 0;
+    background: #5C6D70;
+    color: #fff;
+    border-radius: 2px; }
+    .toolbox ul li:before {
+      content: ''; }
+
+/*
+### --------- ###
+### end about ###
+### --------- ###
 */
 /*
 ### ----------- ###
