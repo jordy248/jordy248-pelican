@@ -30,13 +30,23 @@
         
         li {
             position: relative;
-            margin: 5px 0;
-            background: $color-teal;
+            margin: 8px 0;
+            background: $color-navy;
             color: $color-white;
             border-radius: 2px;
 
+            transition: 0.333s ease all;
+
             &:before {
                 content: '';
+            }
+
+            &:hover {
+                cursor: pointer;
+                background: $color-darkgray;
+                
+                transform: translateY(-3px);
+
             }
         }
     }
