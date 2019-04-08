@@ -2718,6 +2718,7 @@ html.menu-active,
     .toolbox ul li:before {
       content: ''; }
     .toolbox ul li:hover {
+      color: #000145;
       cursor: pointer;
       transform: translateY(-3px); }
       .toolbox ul li:hover:after {
@@ -2728,7 +2729,7 @@ html.menu-active,
       z-index: -1;
       width: 100%;
       height: 100%;
-      background: #815350;
+      background: #E88873;
       top: 100%;
       left: 0;
       transition: inherit; }
