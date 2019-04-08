@@ -57,21 +57,21 @@ EXTRA_PATH_METADATA = {
 ARTICLE_URL = '{date:%Y}/{date:%m}/{slug}.html'
 ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{slug}.html'
 PAGE_URL = 'pages/{slug}/'
-PAGE_SAVE_AS = 'pages/{slug}/index.html'
-YEAR_ARCHIVE_SAVE_AS = '{date:%Y}/index.html'
-MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
+PAGE_SAVE_AS = 'pages/{slug}.html'
+YEAR_ARCHIVE_SAVE_AS = '{date:%Y}.html'
+MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}.html'
 
 # Tags and Category path
 CATEGORY_URL = 'category/{slug}'
-CATEGORY_SAVE_AS = 'category/{slug}/index.html'
+CATEGORY_SAVE_AS = 'category/{slug}.html'
 CATEGORIES_SAVE_AS = 'catgegories.html'
 TAG_URL = 'tag/{slug}'
-TAG_SAVE_AS = 'tag/{slug}/index.html'
+TAG_SAVE_AS = 'tag/{slug}.html'
 TAGS_SAVE_AS = 'tags.html'
 
 # Author
 AUTHOR_URL = 'author/{slug}'
-AUTHOR_SAVE_AS = 'author/{slug}/index.html'
+AUTHOR_SAVE_AS = 'author/{slug}.html'
 AUTHORS_SAVE_AS = 'authors.html'
 
 ### ------- ###
@@ -129,9 +129,11 @@ THEME_STATIC_PATHS = ['static',
                       'assets'
                      ]
 COLOR_SCHEME_CSS = 'github.css'
-DISPLAY_PAGES_ON_MENU = True
-DISPLAY_CATEGORIES_ON_MENU = True
-MENUITEMS = {'about': '/about.html'}
+DISPLAY_PAGES_ON_MENU = False
+DISPLAY_CATEGORIES_ON_MENU = False
+MENUITEMS = [('home', '/index.html'), 
+             ('about', '/pages/about.html')
+            ]
 
 ### ------------------------- ###
 ### additional theme settings ###
@@ -151,11 +153,11 @@ JS_OVERRIDE = [
                 'theme/js/myscript.js'                                      # main custom styles (DEV VERSION)
 ]              
 
-FAVICON = 'theme/assets_images/favicon_jn.png'                                     # hero, dev
 FAVICON = '{0}/{1}/assets_images/favicon_jn.png'.format(SITEURL, THEME_STATIC_DIR) # hero, live
+FAVICON = 'theme/assets_images/favicon_jn.png'                                     # hero, dev
 
-HEADER_COVER = 'theme/assets_images/crater.jpg'                                     # hero, dev
 HEADER_COVER = '{0}/{1}/assets_images/crater.jpg'.format(SITEURL, THEME_STATIC_DIR) # hero, live
+HEADER_COVER = 'theme/assets_images/crater.jpg'                                     # hero, dev
 
 SITESUBTITLE = 'I\'m the subtitle'
 

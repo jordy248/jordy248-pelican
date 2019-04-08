@@ -8,15 +8,25 @@
         </span>
       {% else %}
         <div class="nav-home">
-          <a class="nav-home-link" href="{{ SITEURL }}">
+          <a class="nav-home-link" href="{{ SITEURL }}/">
             <div class="nav-home-link-icon"></div>
           </a>
         </div>
       {% endif %}
       </div>
     <ul>
-      {% for title, link in MENUITEMS.items() %}
-          <li><a href="{{ link }}" role="presentation">{{ title }}</a></li>
+      {% for title, link in MENUITEMS %}
+          <li role="presentation" class="{% if link|replace('/', '') == output_file|replace('/', '') %}active{% endif %}">
+            {% if link|replace('/', '') == output_file|replace('/', '') %}
+              <span>
+                {{ title }}
+              </span>
+            {% else %}
+            <a href ="{{ link }}">
+              {{ title }}
+            </a>
+            {% endif %}
+          </li>
       {% endfor %}
 
       {% if DISPLAY_PAGES_ON_MENU %}
@@ -31,7 +41,7 @@
           {% endif %}
       {% endif %}
 
-      {% for name,link in SOCIAL if name in ['rss', 'rss-square', 'feed'] %}
+      {% for name, link in SOCIAL if name in ['rss', 'rss-square', 'feed'] %}
         <li class="nav-rss"><a href="{{ link }}"><i class="ic ic-rss"></i> Subscribe</a></li>
       {% endfor %}
     </ul>

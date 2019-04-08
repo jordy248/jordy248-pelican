@@ -5,8 +5,6 @@ Category: Test
 Tags: pelican, test
 Slug: about
 Template: about
-Url: about
-Save_as: about.html
 Cover: theme/assets_images/jellyfish.jpg
 Cover_Credits: Robert Zunikoff/Unsplash
 Authors: Jordy Nelson
@@ -63,7 +61,7 @@ via
 <li>PuLP</li>
 <li>Jupyter Notebooks</li>
 <li>SQL</li>
-<li>MATLAT</li>
+<li>MATLAB</li>
 <li>SPSS</li>
 <li>Bayesian methods</li>
 </ul>

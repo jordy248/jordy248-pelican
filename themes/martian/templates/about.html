@@ -1,22 +1,22 @@
 {% extends "base.html" %}
 
-{% block title %}{{ article.title }}{% endblock %}
+{% block title %}{{ page.title }}{% endblock %}
 
 {# <!-- Choosing cover image --> #}
-{% if article.cover %}
-  {% if article.cover|lower|truncate(4, True, '') == "http" %}
-    {% set selected_cover = article.cover %}
+{% if page.cover %}
+  {% if page.cover|lower|truncate(4, True, '') == "http" %}
+    {% set selected_cover = page.cover %}
   {% else %}
-    {% set selected_cover = SITEURL+"/"+article.cover %}
+    {% set selected_cover = SITEURL+"/"+page.cover %}
   {% endif %}
-{% elif article.og_image %}
-  {% if article.og_image|lower|truncate(4, True, '') == "http" %}
-    {% set selected_cover = article.og_image %}
+{% elif page.og_image %}
+  {% if page.og_image|lower|truncate(4, True, '') == "http" %}
+    {% set selected_cover = page.og_image %}
   {% else %}
-    {% set selected_cover = SITEURL+"/"+article.og_image %}
+    {% set selected_cover = SITEURL+"/"+page.og_image %}
   {% endif %}
-{% elif article.color %}
-  {% set selected_color = article.color %}
+{% elif page.color %}
+  {% set selected_color = page.color %}
 {% elif HEADER_COVER %}
   {% if HEADER_COVER|lower|truncate(4, True, '') == "http" %}
     {% set selected_cover = HEADER_COVER %}
@@ -30,29 +30,29 @@
 {% block head %}
   {{ super() }}
 
-  <link href="{{ SITEURL }}/{{ article.url }}" rel="canonical" />
-  {% for keyword in article.keywords %}
+  <link href="{{ SITEURL }}/{{ page.url }}" rel="canonical" />
+  {% for keyword in page.keywords %}
     <meta name="keywords" content="{{keyword}}" >
   {% endfor %}
 
   {% if description %}
     <meta name="description" content="{{ description }}">
-  {% elif article.headline %}
-    <meta name="description" content="{{ article.headline }}">
-  {% elif article.summary %}
-    <meta name="description" content="{{ article.summary|striptags|truncate(140) }}">
+  {% elif page.headline %}
+    <meta name="description" content="{{ page.headline }}">
+  {% elif page.summary %}
+    <meta name="description" content="{{ page.summary|striptags|truncate(140) }}">
   {% endif %}
 
-  {% for author in article.authors %}
+  {% for author in page.authors %}
     <meta name="author" content="{{ author }}">
   {% endfor %}
 
-  {% for tag in article.tags %}
+  {% for tag in page.tags %}
     <meta name="tags" content="{{tag}}">
   {% endfor %}
 
-  {% include 'partials/og_article.html' %}
-  {% include 'partials/jsonld_article.html' %}
+  {% include 'partials/og_page.html' %}
+  {% include 'partials/jsonld_page.html' %}
 {% endblock %}
 
 {% block header %}
@@ -81,13 +81,13 @@
             <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
           </span>
         </nav>
-        <h1 class="post-title">{{ article.title }}</h1>
+        <h1 class="post-title">{{ page.title }}</h1>
         <!-- TODO : Proper class for headline -->
-        {% if article.headline %}
-            <span class="blog-description">{{ article.headline }}</span>
+        {% if page.headline %}
+            <span class="blog-description">{{ page.headline }}</span>
         {% endif %}
         <span class="post-meta">
-            {% for author in article.authors %}
+            {% for author in page.authors %}
                 {% set author_name = author.name | title %}
                 {% if AUTHORS_BIO and author.name.lower() in AUTHORS_BIO %}
                     {% set author_name = AUTHORS_BIO[author.name.lower()].name or author.name %}
@@ -105,11 +105,11 @@
       </div>
     </header>
     <!-- ##### begin cover photo credits ##### -->
-    {% if article.cover_credits %}
+    {% if page.cover_credits %}
     <div class="cover-credits">
       <div class="inner">
         <span>
-          {{ article.cover_credits }}
+          {{ page.cover_credits }}
         </span>
       </div>
     </div>
@@ -124,32 +124,32 @@
         <article class="post">
         <div class="inner">
             <section class="post-content">
-                {{article.content}}
+                {{page.content}}
             </section>
 
             <section class="post-info">
                 <div class="post-share">
-                    <a class="twitter" href="https://twitter.com/share?text={{ article.title }}&amp;url={{ SITEURL }}/{{ article.url }}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <a class="twitter" href="https://twitter.com/share?text={{ page.title }}&amp;url={{ SITEURL }}/{{ page.url }}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
                     </a>
-                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ article.url }}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ page.url }}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
                     </a>
-                    <a class="googleplus" href="https://plus.google.com/share?url={{ SITEURL }}/{{ article.url }}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <a class="googleplus" href="https://plus.google.com/share?url={{ SITEURL }}/{{ page.url }}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
                     </a>
                     <div class="clear"></div>
                 </div>
 
-                {% if article.tags %}
+                {% if page.tags %}
                 <aside class="post-tags">
-                    {% for tag in article.tags %}<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag | escape }}</a>{% if not loop.last %}{% endif %}{% endfor %}
+                    {% for tag in page.tags %}<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag | escape }}</a>{% if not loop.last %}{% endif %}{% endfor %}
                 </aside>
                 {% endif %}
 
                 <div class="clear"></div>
 
-                {% for author in article.authors %}
+                {% for author in page.authors %}
                 {% if AUTHORS_BIO and author.name.lower() in AUTHORS_BIO %}
                 <aside class="post-author">
                     {% set author_name = AUTHORS_BIO[author.name.lower()].name or author.name %}
@@ -196,23 +196,23 @@
 
                 </section>
 
-                {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
+                {% if DISQUS_SITENAME and SITEURL and page.status != "draft" %}
                 <script type="text/javascript">
                     var disqus = '{{ DISQUS_SITENAME }}';
                     var disqus_shortname = '{{ DISQUS_SITENAME }}';
-                    {% if article.disqus_identifier %}
-                    var disqus_identifier = '{{ article.disqus_identifier }}';
+                    {% if page.disqus_identifier %}
+                    var disqus_identifier = '{{ page.disqus_identifier }}';
                     {% else %}
-                    var disqus_identifier = '/{{ article.url }}';
+                    var disqus_identifier = '/{{ page.url }}';
                     {% endif %}
-                    var disqus_url = '{{ SITEURL }}/{{ article.url }}';
+                    var disqus_url = '{{ SITEURL }}/{{ page.url }}';
                 </script>
                 <noscript>Please enable JavaScript to view the comments.</noscript>
                 <section class="post-comments">
-                    {% if article.disqus_identifier %}
-                        <a id="show-disqus" class="post-comments-activate" data-disqus-identifier="{{ article.disqus_identifier }}" >Show Comments</a>
+                    {% if page.disqus_identifier %}
+                        <a id="show-disqus" class="post-comments-activate" data-disqus-identifier="{{ page.disqus_identifier }}" >Show Comments</a>
                     {% else %}
-                        <a id="show-disqus" class="post-comments-activate" data-disqus-identifier="/{{ article.url }}" >Show Comments</a>
+                        <a id="show-disqus" class="post-comments-activate" data-disqus-identifier="/{{ page.url }}" >Show Comments</a>
                     {% endif %}
                     <div id="disqus_thread"></div>
                 </section>
