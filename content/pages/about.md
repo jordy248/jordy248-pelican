@@ -36,7 +36,7 @@ via
 <li>Pelican</li>
 <li>Mustache.js</li>
 <li>Git</li>
-<li>NPM</li>
+<li>npm</li>
 <li>Heroku</li>
 <li>Selenium</li>
 </ul>

@@ -128,7 +128,7 @@ THEME_STATIC_DIR = 'theme'
 THEME_STATIC_PATHS = ['static',
                       'assets'
                      ]
-COLOR_SCHEME_CSS = 'github.css'
+COLOR_SCHEME_CSS = 'monokai.css'
 DISPLAY_PAGES_ON_MENU = False
 DISPLAY_CATEGORIES_ON_MENU = False
 MENUITEMS = [('home', '/index.html'), 
