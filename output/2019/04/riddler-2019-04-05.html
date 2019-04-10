@@ -202,52 +202,11 @@
 <p>Lucky you! You’ve won two gift cards, each loaded with 50 free drinks from your favorite coffee shop, Riddler Caffei-Nation. The cards look identical, and because you’re not one for record-keeping, you randomly pick one of the cards to pay with each time you get a drink. One day, the clerk tells you that he can’t accept the card you presented to him because it doesn’t have any drink credits left on it.</p>
 <p>What is the probability that the other card still has free drinks on it? How many free drinks can you expect are still available?</p>
 </blockquote>
-<p>There are two scenarios that end this puzzle:</p>
-<ol>
-<li>
-<p>We make a coffee run, but <em>both cards are empty.</em></p>
-</li>
-<li>
-<p>We make a coffee run, and the card we choose is empty, but the other card has at least one drink remaining.</p>
-</li>
-</ol>
-<p>In both cases, we don't need to worry about the order of the cards. </p>
-<p>The first is relatively straightforward: If both cards are empty, this means we've already ordered exactly 100 coffees. 50 of them were on the card we tried using, and 50 were on the other card. The probability for this scenario happening is <code>((1/2) ^ (100)) * choose(100, 50)</code> &dash; or just about 8%. So the probability that this isn't the case (i.e., that the card we didn't has at least one drink remaining) is about 92%.</p>
-<p>Let's confirm with an R simulation:</p>
-<div class="highlight"><pre><span></span><span class="c1"># riddler</span>
-<span class="c1"># 2019-04-05</span>
-
-<span class="c1">##### ------- #####</span>
-<span class="c1">##### ------- #####</span>
-<span class="c1">##### EXPRESS ##### -----------------------------------------------------------</span>
-<span class="c1">##### ------- #####</span>
-<span class="c1">##### ------- #####</span>
-
-<span class="nf">if</span><span class="p">(</span><span class="bp">F</span><span class="p">)</span> <span class="p">{</span>
-        <span class="s">&#39;</span>
-<span class="s">        Riddler Express</span>
-<span class="s">        From Tom Hanrahan, a probability puzzle; or, a mini-lesson in </span>
-<span class="s">        surprising results:</span>
-
-<span class="s">        You are playing your first ever game of &quot;Ticket to Ride,&quot; </span>
-<span class="s">        a board game in which players compete to lay down railroad</span>
-<span class="s">        while getting so competitive they risk ruining their marriages.</span>
-<span class="s">        At the start of the game, you are randomly dealt a set of three D</span>
-<span class="s">        estination Tickets out of a deck of 30 different tickets. Each reveals</span>
-<span class="s">        the two terminals you must connect with a railroad to receive points. </span>
-<span class="s">        During the game, you eventually pick up another set of three </span>
-<span class="s">        Destination Tickets, so you have now seen six of the 30 tickets in the </span>
-<span class="s">        game.</span>
-
-<span class="s">        Later, because you enjoyed it so much, you and your friends play a </span>
-<span class="s">        second game. The ticket cards are all returned and reshuffled. Again,</span>
-<span class="s">        you are dealt a set of three tickets to begin play. Which is more </span>
-<span class="s">        likely: that you had seen at least one of these three tickets before, </span>
-<span class="s">        or that they were all new to you?</span>
-<span class="s">        &#39;</span>
-<span class="p">}</span>
-
-<span class="c1">### ---- ###</span>
+<p>The probability that the other card still has free drinks on it is the complement of the probability that both cards are empty &ndash; which is easier to count, so we'll start here!</p>
+<p>If both of the cards loaded with 50 drinks are empty when we make our coffee run, this means we've already ordered exactly 100 coffees. 50 of these orders occurred on the card we tried using, and 50 occurred on the other card. The probability of this scenario happening is <code>((1/2) ^ (100)) * choose(100, 50)</code> &dash; or just about 8%. <strong>So the probability that that the card we didn't has at least one drink remaining (i.e., that it's not the case that both cards are empty when we order the 101st drink) is about 92%.</strong></p>
+<p>Let's confirm with an R simulation.</p>
+<p>First, a little housekeeping:</p>
+<div class="highlight"><pre><span></span><span class="c1">### ---- ###</span>
 <span class="c1">### init ### ------------------------------------------------------------------</span>
 <span class="c1">### ---- ###</span>
 <span class="nf">rm</span><span class="p">(</span><span class="n">list</span><span class="o">=</span><span class="nf">ls</span><span class="p">())</span>
@@ -263,94 +222,98 @@
 <span class="c1">### params ###</span>
 <span class="c1">### ------ ###</span>
 <span class="n">set.seed</span> <span class="o">&lt;-</span> <span class="m">42</span>
-<span class="n">terminals</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="m">30</span>
 
-<span class="c1">### ----------------------- ###</span>
-<span class="c1">### fun to simulate dealing ### -----------------------------------------------</span>
-<span class="c1">### ----------------------- ###</span>
-<span class="n">deal</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">deck</span><span class="p">,</span>
-                 <span class="n">n_cards</span><span class="p">)</span> <span class="p">{</span>
+<span class="c1"># init cards</span>
+<span class="n">cards</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">(</span><span class="n">card1</span> <span class="o">=</span> <span class="m">50</span><span class="p">,</span>
+              <span class="n">card2</span> <span class="o">=</span> <span class="m">50</span><span class="p">)</span>
+</pre></div>
 
-        <span class="n">hand</span> <span class="o">&lt;-</span> <span class="nf">sample</span><span class="p">(</span><span class="n">x</span>       <span class="o">=</span> <span class="n">deck</span><span class="p">,</span>
-                       <span class="n">size</span>    <span class="o">=</span> <span class="n">n_cards</span><span class="p">,</span>
-                       <span class="n">replace</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
 
-        <span class="n">deck</span> <span class="o">&lt;-</span> <span class="n">deck[</span><span class="o">-</span><span class="n">hand]</span>
+<p>We'll define a little helper function to randomly choose one of the cards as well as a recursive function to simulate buying coffee using our cards:</p>
+<div class="highlight"><pre><span></span><span class="c1">### ------------------------------ ###</span>
+<span class="c1">### funs to simulate buying coffee ### ----------------------------------------</span>
+<span class="c1">### ------------------------------ ###</span>
+
+<span class="c1">### --------------------------------------- ###</span>
+<span class="c1">### fun to randomly choose card from wallet ###</span>
+<span class="c1">### --------------------------------------- ###</span>
+<span class="n">choose_card</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">wallet</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1"># randomly choose card from cards available in wallet</span>
+        <span class="n">card_chosen_idx</span> <span class="o">&lt;-</span> <span class="nf">sample</span><span class="p">(</span><span class="n">x</span>       <span class="o">=</span> <span class="nf">length</span><span class="p">(</span><span class="n">wallet</span><span class="p">),</span>
+                                  <span class="n">size</span>    <span class="o">=</span> <span class="m">1</span><span class="p">,</span> 
+                                  <span class="n">replace</span> <span class="o">=</span> <span class="bp">F</span><span class="p">,</span>
+                                  <span class="n">prob</span>    <span class="o">=</span> <span class="kc">NULL</span><span class="p">)</span>
 
         <span class="c1"># return</span>
-        <span class="n">res</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">(</span><span class="n">hand</span> <span class="o">=</span> <span class="n">hand</span><span class="p">,</span>
-                    <span class="n">deck</span> <span class="o">=</span> <span class="n">deck</span><span class="p">)</span>
-        <span class="nf">return</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+        <span class="nf">return</span><span class="p">(</span><span class="n">card_chosen_idx</span><span class="p">)</span>
 <span class="p">}</span>
 
 <span class="c1">### ----------------------------- ###</span>
-<span class="c1">### simulate ticket to ride games ### -----------------------------------------</span>
+<span class="c1">### fun to simulate buying coffee ###</span>
 <span class="c1">### ----------------------------- ###</span>
+<span class="n">buy_coffee</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">wallet</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1"># randomly choose a card from the wallet to use</span>
+        <span class="n">card_chosen_idx</span> <span class="o">&lt;-</span> <span class="nf">choose_card</span><span class="p">(</span><span class="n">wallet</span><span class="p">)</span>
 
-<span class="c1"># init vector to hold flags for games with dupe terminals</span>
-<span class="n">dupe_terminals</span> <span class="o">&lt;-</span> <span class="nf">rep</span><span class="p">(</span><span class="m">0L</span><span class="p">,</span>
-                      <span class="m">1e6</span><span class="p">)</span>
+        <span class="c1"># break case = chosen card is empty</span>
+        <span class="nf">if</span><span class="p">(</span><span class="n">wallet[[card_chosen_idx]]</span> <span class="o">==</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nf">return</span><span class="p">(</span><span class="n">wallet</span><span class="p">)</span>
+        <span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+                <span class="n">wallet[[card_chosen_idx]]</span> <span class="o">&lt;-</span> <span class="n">wallet[[card_chosen_idx]]</span> <span class="o">-</span> <span class="m">1</span>
+
+                <span class="nf">return</span><span class="p">(</span><span class="nf">buy_coffee</span><span class="p">(</span><span class="n">wallet</span><span class="p">))</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Then we'll simulate a hundred thousand scenarios:</p>
+<div class="highlight"><pre><span></span><span class="c1">### -------------------- ###</span>
+<span class="c1">### simulate coffee runs ### --------------------------------------------------</span>
+<span class="c1">### -------------------- ###</span>
+
+<span class="c1"># init vector to hold number of drinks on other card</span>
+<span class="n">coffee_runs</span> <span class="o">&lt;-</span> <span class="nf">rep</span><span class="p">(</span><span class="kc">NA</span><span class="p">,</span>
+                   <span class="m">1e5</span><span class="p">)</span>
 
 <span class="c1"># init progress bar</span>
 <span class="n">pb</span> <span class="o">&lt;-</span> <span class="n">progress_bar</span><span class="o">$</span><span class="nf">new</span><span class="p">(</span>
-        <span class="n">format</span> <span class="o">=</span> <span class="nf">paste0</span><span class="p">(</span><span class="s">&#39;simulating hands&#39;</span><span class="p">,</span>
+        <span class="n">format</span> <span class="o">=</span> <span class="nf">paste0</span><span class="p">(</span><span class="s">&#39;simulating coffee runs&#39;</span><span class="p">,</span>
                         <span class="s">&#39;(:spin) [:bar] :percent eta: :eta&#39;</span><span class="p">),</span>
-        <span class="n">total</span> <span class="o">=</span> <span class="nf">length</span><span class="p">(</span><span class="n">dupe_terminals</span><span class="p">),</span> <span class="n">clear</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span> <span class="m">80</span><span class="p">)</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="nf">length</span><span class="p">(</span><span class="n">coffee_runs</span><span class="p">),</span> <span class="n">clear</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span> <span class="m">80</span><span class="p">)</span>
 
-<span class="c1"># simulate two games and update dupe_terminals for matches</span>
-<span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">dupe_terminals</span><span class="p">))</span> <span class="p">{</span>
+<span class="c1"># simulate coffee runs</span>
+<span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">coffee_runs</span><span class="p">))</span> <span class="p">{</span>
+        <span class="c1"># simulate coffee run</span>
+        <span class="n">coffee_run</span> <span class="o">&lt;-</span> <span class="nf">buy_coffee</span><span class="p">(</span><span class="n">cards</span><span class="p">)</span>
 
-        <span class="c1"># simulate games</span>
-        <span class="n">game_1</span> <span class="o">&lt;-</span> <span class="nf">deal</span><span class="p">(</span><span class="n">deck</span>      <span class="o">=</span> <span class="n">terminals</span><span class="p">,</span> 
-                       <span class="n">n_cards</span> <span class="o">=</span> <span class="m">6</span><span class="p">)</span>
+        <span class="c1"># store number of drinks on other card</span>
+        <span class="n">coffee_runs[i]</span> <span class="o">&lt;-</span> <span class="nf">as.integer</span><span class="p">(</span><span class="n">coffee_run</span><span class="nf">[which.max</span><span class="p">(</span><span class="n">coffee_run</span><span class="p">)</span><span class="n">]</span><span class="p">)</span>
 
-        <span class="n">game_2</span> <span class="o">&lt;-</span> <span class="nf">deal</span><span class="p">(</span><span class="n">deck</span>      <span class="o">=</span> <span class="n">terminals</span><span class="p">,</span> 
-                       <span class="n">n_cards</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
-
-        <span class="c1"># get hands from simulated games</span>
-        <span class="n">hand_game_1</span> <span class="o">&lt;-</span> <span class="n">game_1</span><span class="o">$</span><span class="n">hand</span>
-
-        <span class="n">hand_game_2</span> <span class="o">&lt;-</span> <span class="n">game_2</span><span class="o">$</span><span class="n">hand</span>
-
-        <span class="c1"># check for dupes and update dupe_terminals</span>
-        <span class="nf">if</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">hand_game_1</span> <span class="o">%in%</span> <span class="n">hand_game_2</span><span class="p">)</span> <span class="o">&gt;</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">dupe_terminals[i]</span> <span class="o">&lt;-</span> <span class="m">1L</span>
-        <span class="p">}</span>
-
-        <span class="c1"># init progress</span>
+        <span class="c1"># increment progress</span>
         <span class="n">pb</span><span class="o">$</span><span class="nf">tick</span><span class="p">()</span>
-
 <span class="p">}</span>
-
-<span class="c1">### -------- ###</span>
-<span class="c1">### calc res ### --------------------------------------------------------------</span>
-<span class="c1">### -------- ###</span>
-
-<span class="c1"># second games that included at least one card that was seen in game 1</span>
-<span class="nf">sum</span><span class="p">(</span><span class="n">dupe_terminals</span><span class="p">)</span><span class="o">/</span><span class="nf">length</span><span class="p">(</span><span class="n">dupe_terminals</span><span class="p">)</span>
 </pre></div>
 
 
-<div class="highlight"><pre><span></span><span class="n">[1]</span> <span class="m">0.501665</span>
+<p>Let's what our simulation thinks the probability of the other card having drinks on it is:</p>
+<div class="highlight"><pre><span></span><span class="c1">### ----------------- ###</span>
+<span class="c1">### check sim results ### -----------------------------------------------------</span>
+<span class="c1">### ----------------- ###</span>
+
+<span class="c1"># prob other card still has drinks</span>
+<span class="m">1</span> <span class="o">-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">coffee_runs</span> <span class="o">==</span> <span class="m">0</span><span class="p">)</span> <span class="o">/</span> <span class="nf">length</span><span class="p">(</span><span class="n">coffee_runs</span><span class="p">)</span>
+
+<span class="n">[1]</span> <span class="m">0.92041</span>
 </pre></div>
 
 
-<p>Over the course of a million simulations, we roughly match our computed result above. And we can watch the simulations converge on this result:</p>
-<div class="highlight"><pre><span></span><span class="c1">### -------- ###</span>
-<span class="c1">### plot res ### --------------------------------------------------------------</span>
-<span class="c1">### -------- ###</span>
-<span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">samples</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">dupe_terminals</span><span class="p">),</span>
-                 <span class="n">dat</span>     <span class="o">=</span> <span class="n">dupe_terminals</span><span class="p">)</span> <span class="o">%&gt;%</span>
-        <span class="nf">mutate</span><span class="p">(</span><span class="n">running_rate</span> <span class="o">=</span> <span class="nf">cumsum</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span> <span class="o">/</span> <span class="n">samples</span><span class="p">)</span>
+<p>Just over 92% probability that the other card has drinks on it!</p>
+<p>And how many drinks can we expect that card to have on it?</p>
+<div class="highlight"><pre><span></span><span class="nf">mean</span><span class="p">(</span><span class="n">coffee_runs</span><span class="p">)</span>
 
-<span class="n">df</span> <span class="o">%&gt;%</span>
-        <span class="nf">ggplot</span><span class="p">()</span> <span class="o">+</span>
-        <span class="nf">geom_line</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="nf">log</span><span class="p">(</span><span class="n">samples</span><span class="p">),</span>
-                      <span class="n">y</span> <span class="o">=</span> <span class="n">running_rate</span><span class="p">))</span>
+<span class="n">[1]</span> <span class="m">7.03834</span>
 </pre></div>
-
-
-<p><img alt="Riddler Express 2019-03-29 Plot" src="../../theme/assets_images/riddler_express_2019-03-29.png" title="Riddler Express 2019-03-29 Plot"></p>
             </section>
 
             <section class="post-info">
@@ -389,10 +352,12 @@
 
                 <aside class="post-nav">
                     <a class="post-nav-prev" href="../../2019/04/riddler-2019-03-29.html">
-                        <section class="post-nav-teaser">
+                        <section class="post-nav-teaser" style="background: url(../../theme/assets_images/jack-anstey-383370-unsplash.jpg); background-size: cover; background-repeat: no-repeat;">
                             <i class="ic ic-arrow-right"></i>
-                                <h2 class="post-nav-title">2019-03-29 Riddler</h2>
-                            <p class="post-nav-excerpt">2019-03-29 Riddler</p>
+                            <div class="post-nav-text">
+                              <h2 class="post-nav-title">2019-03-29 Riddler</h2>
+                              <p class="post-nav-excerpt">2019-03-29 Riddler</p>
+                            </div>
                         </section>
                     </a>
                     <div class="clear"></div>

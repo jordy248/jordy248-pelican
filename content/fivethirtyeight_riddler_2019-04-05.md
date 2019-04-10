@@ -16,54 +16,15 @@ This past weekend's [Riddler Classic](https://fivethirtyeight.com/features/does-
 
 > What is the probability that the other card still has free drinks on it? How many free drinks can you expect are still available?
 
-There are two scenarios that end this puzzle:
+The probability that the other card still has free drinks on it is the complement of the probability that both cards are empty &ndash; which is easier to count, so we'll start here!
 
-1. We make a coffee run, but *both cards are empty.*
+If both of the cards loaded with 50 drinks are empty when we make our coffee run, this means we've already ordered exactly 100 coffees. 50 of these orders occurred on the card we tried using, and 50 occurred on the other card. The probability of this scenario happening is `((1/2) ^ (100)) * choose(100, 50)` &dash; or just about 8%. **So the probability that that the card we didn't has at least one drink remaining (i.e., that it's not the case that both cards are empty when we order the 101st drink) is about 92%.**
 
-2. We make a coffee run, and the card we choose is empty, but the other card has at least one drink remaining.
+Let's confirm with an R simulation.
 
-In both cases, we don't need to worry about the order of the cards. 
-
-The first is relatively straightforward: If both cards are empty, this means we've already ordered exactly 100 coffees. 50 of them were on the card we tried using, and 50 were on the other card. The probability for this scenario happening is `((1/2) ^ (100)) * choose(100, 50)` &dash; or just about 8%. So the probability that this isn't the case (i.e., that the card we didn't has at least one drink remaining) is about 92%.
-
-
-
-Let's confirm with an R simulation:
+First, a little housekeeping:
 
 ```R
-# riddler
-# 2019-04-05
-
-##### ------- #####
-##### ------- #####
-##### EXPRESS ##### -----------------------------------------------------------
-##### ------- #####
-##### ------- #####
-
-if(F) {
-        '
-        Riddler Express
-        From Tom Hanrahan, a probability puzzle; or, a mini-lesson in 
-        surprising results:
-        
-        You are playing your first ever game of "Ticket to Ride," 
-        a board game in which players compete to lay down railroad
-        while getting so competitive they risk ruining their marriages.
-        At the start of the game, you are randomly dealt a set of three D
-        estination Tickets out of a deck of 30 different tickets. Each reveals
-        the two terminals you must connect with a railroad to receive points. 
-        During the game, you eventually pick up another set of three 
-        Destination Tickets, so you have now seen six of the 30 tickets in the 
-        game.
-        
-        Later, because you enjoyed it so much, you and your friends play a 
-        second game. The ticket cards are all returned and reshuffled. Again,
-        you are dealt a set of three tickets to begin play. Which is more 
-        likely: that you had seen at least one of these three tickets before, 
-        or that they were all new to you?
-        '
-}
-
 ### ---- ###
 ### init ### ------------------------------------------------------------------
 ### ---- ###
@@ -80,92 +41,99 @@ library(tidyverse)
 ### params ###
 ### ------ ###
 set.seed <- 42
-terminals <- 1:30
 
-### ----------------------- ###
-### fun to simulate dealing ### -----------------------------------------------
-### ----------------------- ###
-deal <- function(deck,
-                 n_cards) {
-        
-        hand <- sample(x       = deck,
-                       size    = n_cards,
-                       replace = F)
-        
-        deck <- deck[-hand]
+# init cards
+cards <- list(card1 = 50,
+              card2 = 50)
+```
+
+We'll define a little helper function to randomly choose one of the cards as well as a recursive function to simulate buying coffee using our cards:
+
+```R
+### ------------------------------ ###
+### funs to simulate buying coffee ### ----------------------------------------
+### ------------------------------ ###
+
+### --------------------------------------- ###
+### fun to randomly choose card from wallet ###
+### --------------------------------------- ###
+choose_card <- function(wallet) {
+        # randomly choose card from cards available in wallet
+        card_chosen_idx <- sample(x       = length(wallet),
+                                  size    = 1, 
+                                  replace = F,
+                                  prob    = NULL)
         
         # return
-        res <- list(hand = hand,
-                    deck = deck)
-        return(res)
+        return(card_chosen_idx)
 }
 
 ### ----------------------------- ###
-### simulate ticket to ride games ### -----------------------------------------
+### fun to simulate buying coffee ###
 ### ----------------------------- ###
+buy_coffee <- function(wallet) {
+        # randomly choose a card from the wallet to use
+        card_chosen_idx <- choose_card(wallet)
+        
+        # break case = chosen card is empty
+        if(wallet[[card_chosen_idx]] == 0) {
+                return(wallet)
+        } else {
+                wallet[[card_chosen_idx]] <- wallet[[card_chosen_idx]] - 1
+                
+                return(buy_coffee(wallet))
+        }
+}
+```
 
-# init vector to hold flags for games with dupe terminals
-dupe_terminals <- rep(0L,
-                      1e6)
+Then we'll simulate a hundred thousand scenarios:
+
+```R
+### -------------------- ###
+### simulate coffee runs ### --------------------------------------------------
+### -------------------- ###
+
+# init vector to hold number of drinks on other card
+coffee_runs <- rep(NA,
+                   1e5)
 
 # init progress bar
 pb <- progress_bar$new(
-        format = paste0('simulating hands',
+        format = paste0('simulating coffee runs',
                         '(:spin) [:bar] :percent eta: :eta'),
-        total = length(dupe_terminals), clear = FALSE, width= 80)
+        total = length(coffee_runs), clear = FALSE, width= 80)
 
-# simulate two games and update dupe_terminals for matches
-for(i in 1:length(dupe_terminals)) {
+# simulate coffee runs
+for(i in 1:length(coffee_runs)) {
+        # simulate coffee run
+        coffee_run <- buy_coffee(cards)
         
-        # simulate games
-        game_1 <- deal(deck      = terminals, 
-                       n_cards = 6)
+        # store number of drinks on other card
+        coffee_runs[i] <- as.integer(coffee_run[which.max(coffee_run)])
         
-        game_2 <- deal(deck      = terminals, 
-                       n_cards = 3)
-        
-        # get hands from simulated games
-        hand_game_1 <- game_1$hand
-        
-        hand_game_2 <- game_2$hand
-        
-        # check for dupes and update dupe_terminals
-        if(sum(hand_game_1 %in% hand_game_2) > 0) {
-                dupe_terminals[i] <- 1L
-        }
-        
-        # init progress
+        # increment progress
         pb$tick()
-        
 }
-
-### -------- ###
-### calc res ### --------------------------------------------------------------
-### -------- ###
-
-# second games that included at least one card that was seen in game 1
-sum(dupe_terminals)/length(dupe_terminals)
 ```
+Let's what our simulation thinks the probability of the other card having drinks on it is:
 
 ```R
-[1] 0.501665
+### ----------------- ###
+### check sim results ### -----------------------------------------------------
+### ----------------- ###
+
+# prob other card still has drinks
+1 - sum(coffee_runs == 0) / length(coffee_runs)
+
+[1] 0.92041
 ```
 
-Over the course of a million simulations, we roughly match our computed result above. And we can watch the simulations converge on this result:
+Just over 92% probability that the other card has drinks on it!
+
+And how many drinks can we expect that card to have on it?
 
 ```R
-### -------- ###
-### plot res ### --------------------------------------------------------------
-### -------- ###
-df <- data.frame(samples = 1:length(dupe_terminals),
-                 dat     = dupe_terminals) %>%
-        mutate(running_rate = cumsum(dat) / samples)
+mean(coffee_runs)
 
-df %>%
-        ggplot() +
-        geom_line(aes(x = log(samples),
-                      y = running_rate))
-
+[1] 7.03834
 ```
-
-![Riddler Express 2019-03-29 Plot](../../theme/assets_images/riddler_express_2019-03-29.png "Riddler Express 2019-03-29 Plot")
