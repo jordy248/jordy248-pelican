@@ -8,7 +8,7 @@ Cover_Credits: Jack Anstey/Unsplash
 Authors: Jordy Nelson
 Summary: 2019-03-29 Riddler
 
-Last weekend's [Riddler Express](https://fivethirtyeight.com/features/can-you-win-a-spelling-bee-if-you-know-99-percent-of-the-words/) offered a probability problem with surprising results:
+Last weekend's [Riddler Express](https://fivethirtyeight.com/features/can-you-win-a-spelling-bee-if-you-know-99-percent-of-the-words/) combines two super fun things: board games and probability!
 
 > From Tom Hanrahan, a probability puzzle; or, a mini-lesson in surprising results:
 
