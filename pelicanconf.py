@@ -9,7 +9,7 @@ SITEURL = 'https://jordynelson.io'
 AUTHOR = u'Jordy Nelson'
 
 SITENAME                  = u'Jordy Nelson'
-SITESUBTITLE              = u''
+#SITESUBTITLE              = u''
 SHOW_SITESUBTITLE_IN_HTML = False
 
 DEFAULT_DATE = 'fs'
@@ -158,8 +158,6 @@ FAVICON = 'theme/assets_images/favicon_jn.png'                                  
 
 HEADER_COVER = '{0}/{1}/assets_images/crater.jpg'.format(SITEURL, THEME_STATIC_DIR) # hero, live
 HEADER_COVER = 'theme/assets_images/crater.jpg'                                     # hero, dev
-
-SITESUBTITLE = 'I\'m the subtitle'
 
 # list of article.title to ignore in default pagination
 PAGINATION_IGNORE = ['404', 'about']
