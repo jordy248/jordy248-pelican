@@ -6,7 +6,7 @@ Slug: riddler-2019-04-05
 Cover: theme/assets_images/karl-fredrickson-35017-unsplash.jpg
 Cover_Credits: Karl Frederickson/Unsplash
 Authors: Jordy Nelson
-Summary: 2019-04-05 Riddler
+Summary: Are we out of free coffees?
 
 This past weekend's [Riddler Classic](https://fivethirtyeight.com/features/does-your-gift-card-still-have-free-drinks-on-it/) is a neat little combinatorics problem.
 

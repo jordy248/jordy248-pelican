@@ -6,7 +6,7 @@ Slug: riddler-2019-03-29
 Cover: theme/assets_images/jack-anstey-383370-unsplash.jpg
 Cover_Credits: Jack Anstey/Unsplash
 Authors: Jordy Nelson
-Summary: 2019-03-29 Riddler
+Summary: Have we already seen these cards?
 
 Last weekend's [Riddler Express](https://fivethirtyeight.com/features/can-you-win-a-spelling-bee-if-you-know-99-percent-of-the-words/) combines two super fun things: board games and probability!
 
