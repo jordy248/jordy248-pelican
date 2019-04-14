@@ -200,6 +200,7 @@
 
                 </section>
 
+                <!-- ##### begin disqus comments ##### -->
                 {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
                 <script>
                 /**
@@ -226,12 +227,14 @@
                   {% if article.disqus_identifier %}
                       <a id="show-disqus" class="post-comments-activate" data-disqus-identifier="{{ article.disqus_identifier }}">Show Comments</a>
                   {% else %}
-                      <a id="show-disqus" class="post-comments-activate" data-disqus-identifier="/{{ article.url }}" >Show Comments</a>
+                      <a id="show-disqus" class="post-comments-activate" data-disqus-identifier="/{{ article.slug }}" >Show Comments</a>
                   {% endif %}
                   <div id="disqus_thread"></div>
                 </section>
                 {% endif %}
+                <!-- ##### end disqus comments ##### -->
 
+                <!-- ##### begin neighbors prev and next articles ##### -->
                 {% if 'neighbors' in PLUGINS %}
                 <aside class="post-nav">
                     {% if article.next_article and article.next_article.title.lower() not in PAGINATION_IGNORE %}
@@ -259,9 +262,13 @@
                     <div class="clear"></div>
                 </aside>
                 {% endif %}
+                <!-- ##### begin neighbors prev and next articles ##### -->
 
             </div>
         </article>
     </main>
-
+    
+  <!-- ##### begin disqus comment count script ##### -->
+  <script id="dsq-count-scr" src="//{{ DISQUS_SITENAME }}.disqus.com/count.js" async></script>
+  <!-- ##### end disqus comment count script ##### -->    
 {% endblock content %}
