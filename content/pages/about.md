@@ -1,7 +1,7 @@
 Title: About
 Date: 1970-01-01 00:01
 Modified: 2019-03-12 08:21
-Category: Test
+Category: about
 Tags: about
 Slug: about
 Template: about
@@ -21,10 +21,6 @@ via
 <br />
 🚗 **City, MI ✋**
 </div>
-
-I've been involved with digital and integrated marketing for the past seven (and counting) years. (Other than a brief stint with The New Teacher Project that helped me realize my skillset belonged more to the marketing realm than the teaching one!)
-
-Growing up in an engineering family in southeast Michigan and taking AutoCAD and computer classes since middle school (beginning with BASIC in 7th grade), I like to say studying English in college was my form of rebellion. But the truth is, I love digital marketing and analytics for the unique way it blends the quantitative and the creative.
 
 <div class="toolbox">
 <h2>🔧 Toolbox 📏</h2>
@@ -127,7 +123,7 @@ Growing up in an engineering family in southeast Michigan and taking AutoCAD and
 <h3 class="experience-location" data-alt="The College of Wooster">The College of Wooster</h3>
 <span class="experience-position">BA, English
     <span class="experience-time">2008 &ndash; 2012</span>
-    <span class="experience-more">Test</span>
+    <span class="experience-more"></span>
 </span>
 </div>
 

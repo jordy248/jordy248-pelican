@@ -43,7 +43,7 @@ PAGINATION_PATTERNS = (
 )
 
 # Uncomment following line if you want document-relative URLs when developing
-RELATIVE_URLS = True
+RELATIVE_URLS = False
 
 STATIC_PATHS = ['assets']
 
@@ -141,14 +141,14 @@ MENUITEMS = [('home', '/index.html'),
 MP_BOOTSTRAPPED = True
 MP_USE_FONTAWESOME = True
 CSS_OVERRIDE = [
-#                '{0}/{1}/css/normalize.css'.format(SITEURL, THEME_STATIC_DIR), # normalize styles
-#                '{0}/{1}/css/main.css'.format(SITEURL, THEME_STATIC_DIR),      # main custom styles
+                '{0}/{1}/css/normalize.css'.format(SITEURL, THEME_STATIC_DIR), # normalize styles
+                '{0}/{1}/css/main.css'.format(SITEURL, THEME_STATIC_DIR),      # main custom styles
                 'theme/css/normalize.css',                                     # normalize styles (DEV VERSION)
                 'theme/css/main.css'                                           # main custom styles (DEV VERSION)
 ]    
 JS_OVERRIDE = [
-#                '{0}/{1}/js/script.js'.format(SITEURL, THEME_STATIC_DIR),    # normalize styles
-#                '{0}/{1}/js/myscript.js'.format(SITEURL, THEME_STATIC_DIR), # main custom styles
+                '{0}/{1}/js/script.js'.format(SITEURL, THEME_STATIC_DIR),    # normalize styles
+                '{0}/{1}/js/myscript.js'.format(SITEURL, THEME_STATIC_DIR), # main custom styles
                 'theme/js/script.js',                                       # normalize styles (DEV VERSION)
                 'theme/js/myscript.js'                                      # main custom styles (DEV VERSION)
 ]              
