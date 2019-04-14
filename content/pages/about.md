@@ -2,7 +2,7 @@ Title: About
 Date: 1970-01-01 00:01
 Modified: 2019-03-12 08:21
 Category: Test
-Tags: pelican, test
+Tags: about
 Slug: about
 Template: about
 Cover: theme/assets_images/jellyfish.jpg

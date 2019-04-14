@@ -141,12 +141,6 @@
                     <div class="clear"></div>
                 </div>
 
-                {% if page.tags %}
-                <aside class="post-tags">
-                    {% for tag in page.tags %}<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag | escape }}</a>{% if not loop.last %}{% endif %}{% endfor %}
-                </aside>
-                {% endif %}
-
                 <div class="clear"></div>
 
                 {% for author in page.authors %}
