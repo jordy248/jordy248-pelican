@@ -35,8 +35,8 @@ via
 <li>Jinja2</li>
 <li>Pelican</li>
 <li>Mustache.js</li>
-<li>Git</li>
-<li>npm</li>
+<li>Git/GitHub</li>
+<li>Node/npm</li>
 <li>Heroku</li>
 <li>Selenium</li>
 </ul>
@@ -56,10 +56,13 @@ via
 <li>Python</li>
 <li>numpy</li>
 <li>scikit-learn</li>
+<li>scipy</li>
 <li>networkX</li>
 <li>simpy</li>
 <li>PuLP</li>
 <li>Jupyter Notebooks</li>
+<li>Plotly</li>
+<li>Leaflet</li>
 <li>SQL</li>
 <li>MATLAB</li>
 <li>SPSS</li>
