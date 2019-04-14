@@ -7,6 +7,7 @@ Cover: theme/assets_images/jack-anstey-383370-unsplash.jpg
 Cover_Credits: Jack Anstey/Unsplash
 Authors: Jordy Nelson
 Summary: Have we already seen these cards?
+Comments: True
 
 Last weekend's [Riddler Express](https://fivethirtyeight.com/features/can-you-win-a-spelling-bee-if-you-know-99-percent-of-the-words/) combines two super fun things: board games and probability!
 

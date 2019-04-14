@@ -7,8 +7,9 @@ Cover: theme/assets_images/karl-fredrickson-35017-unsplash.jpg
 Cover_Credits: Karl Frederickson/Unsplash
 Authors: Jordy Nelson
 Summary: Are we out of free coffees?
+Comments: True
 
-This past weekend's [Riddler Classic](https://fivethirtyeight.com/features/does-your-gift-card-still-have-free-drinks-on-it/) is a neat little combinatorics problem.
+This past weekend's [Riddler Classic](https://fivethirtyeight.com/features/does-your-gift-card-still-have-free-drinks-on-it/) is a neat little coffee combinatorics problem.
 
 > From Michael Branicky, your card has been declined:
 

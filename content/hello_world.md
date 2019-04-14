@@ -8,6 +8,7 @@ Cover: theme/assets_images/galaxy.jpg
 Cover_Credits: Thom Schneider/Unsplash
 Authors: Jordy Nelson
 Summary: Hello, World!
+Comments: True
 
 Hello, World!
 

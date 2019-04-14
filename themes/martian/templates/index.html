@@ -49,10 +49,14 @@
 {% endblock header %}
 
 {% block content %}
-
 <div id="index" class="container">
   <main class="content" role="main">
     {% include "partials/loop.html" %}
   </main>
 </div>
+
+<!-- ##### begin disqus comment count script ##### -->
+<script id="dsq-count-scr" src="//{{ DISQUS_SITENAME }}.disqus.com/count.js" async></script>
+<!-- ##### end disqus comment count script ##### -->
+
 {% endblock content %}

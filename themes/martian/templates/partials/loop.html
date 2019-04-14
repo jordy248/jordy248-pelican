@@ -38,7 +38,11 @@
                             </p>
                         </section>
                     {% endif %}
-                    {% include 'partials/comments_count.html' %}
+                    <!-- ##### begin comments count ##### -->
+                    {% if article.comments == 'True' %}
+                        {% include 'partials/comments_count.html' %}
+                    {% endif %}
+                    <!-- ##### end comments count ##### -->
                 </div>
             </article>
         {% endif %}

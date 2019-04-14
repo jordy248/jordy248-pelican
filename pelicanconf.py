@@ -43,7 +43,7 @@ PAGINATION_PATTERNS = (
 )
 
 # Uncomment following line if you want document-relative URLs when developing
-RELATIVE_URLS = True
+RELATIVE_URLS = False
 
 STATIC_PATHS = ['assets']
 
@@ -56,7 +56,7 @@ EXTRA_PATH_METADATA = {
 # Post and Pages path
 ARTICLE_URL = '{date:%Y}/{date:%m}/{slug}.html'
 ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{slug}.html'
-PAGE_URL = 'pages/{slug}/'
+PAGE_URL = 'pages/{slug}/.html'
 PAGE_SAVE_AS = 'pages/{slug}.html'
 YEAR_ARCHIVE_SAVE_AS = '{date:%Y}.html'
 MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}.html'
