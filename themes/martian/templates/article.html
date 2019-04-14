@@ -227,7 +227,7 @@
                   {% if article.disqus_identifier %}
                       <a id="show-disqus" class="post-comments-activate" data-disqus-identifier="{{ article.disqus_identifier }}">Show Comments</a>
                   {% else %}
-                      <a id="show-disqus" class="post-comments-activate" data-disqus-identifier="/{{ article.url }}" >Show Comments</a>
+                      <a id="show-disqus" class="post-comments-activate" data-disqus-identifier="{{ article.url }}" >Show Comments</a>
                   {% endif %}
                   <div id="disqus_thread"></div>
                 </section>

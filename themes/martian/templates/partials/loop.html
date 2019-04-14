@@ -20,6 +20,10 @@
                                 <a href="{{ SITEURL }}/{{ author.url }}">{{ author_name }}</a>
                             {% endfor %}
                             | <time datetime="{{ article.locale_date }}">{{ article.locale_date }}</time>
+                            | 
+                            <!-- ##### begin comments count ##### -->
+                            {% if article.comments == 'True' %} {% include 'partials/comments_count.html' %} {% endif %}
+                            <!-- ##### end comments count ##### -->
                         </span>
                         <div class="clear"></div>
                     </header>
@@ -38,11 +42,6 @@
                             </p>
                         </section>
                     {% endif %}
-                    <!-- ##### begin comments count ##### -->
-                    {% if article.comments == 'True' %}
-                        {% include 'partials/comments_count.html' %}
-                    {% endif %}
-                    <!-- ##### end comments count ##### -->
                 </div>
             </article>
         {% endif %}
