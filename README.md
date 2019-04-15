@@ -25,3 +25,5 @@ jordynelson.io is hosted by [GitHub Pages](https://pages.github.com/) and powere
     * Or using npm script:
         * `npm run-python-server`
 6. Move the contents of `jordy248/output` to `jordy248.github.io` and commit the changes to both `jordy248` and `jordy248.github.io`
+    * Using npm:
+        * `npm run copy-live`
