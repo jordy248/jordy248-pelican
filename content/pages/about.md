@@ -120,28 +120,62 @@ via
 <h2>👨‍🎓 Education and Training 🏋️</h2>
 
 <div class="experience">
-<h3 class="experience-location" data-alt="The College of Wooster">The College of Wooster</h3>
-<span class="experience-position">BA, English
-    <span class="experience-time">2008 &ndash; 2012</span>
-    <span class="experience-more"></span>
-</span>
+    <h3 class="experience-location" data-alt="The College of Wooster">The College of Wooster</h3>
+    <span class="experience-position">
+        BA, English
+        <span class="experience-time">2008 &ndash; 2012</span>
+        <span class="experience-more">
+            <span>Senior Independent Study Thesis: A year-long research project composed of a 127-page critical analysis entitled "Na(rr/vig)ating the Labyrinth: Literary Imaginings of Center, Course, Horizon, and Repetition in the Form of the Labyrinth" and an oral defense of the thesis. <strong>Awarded Waldo H. Dunn Prize for Most Distinguished Senior Independent Study</strong></span>
+            <br />
+            <br />
+            <span>Junior Independent Study Thesis: A semester-long research project culminating in a 66-page critical analysis entitled "Traduttore, Traditore/Traitor, Trader: Re-Producing and Re-Presenting Culture in Writing and Translation". <strong>Thomas D. Clareson Prize for Best Junior Independent Study</strong></span>
+        </span>
+    </span>
 </div>
 
 <div class="experience">
-<h3 class="experience-location" data-alt="Georgia Institute of Technology">Georgia Institute of Technology</h3>
-<span class="experience-position">MicroMasters, Analytics<span class="experience-time">2018</span></span>
+    <h3 class="experience-location" data-alt="Georgia Institute of Technology">Georgia Institute of Technology</h3>
+    <span class="experience-position">
+        MicroMasters, Analytics
+        <span class="experience-time">2018</span>
+        <span class="experience-more">
+            <a href="https://credentials.edx.org/credentials/950b61206f594223b5a3b9ac8d6dabe0/">Cert</a>
+            <br />
+            <a href="https://courses.edx.org/certificates/4a15891e8da04dcc8180689ee608abce">MGT6203x: Data Analytics in Business</a>
+            <br />
+            <a href="https://courses.edx.org/certificates/bd0473d1053a4a60a106b184bfc2744b">ISYE6501x: Introduction to Analytics Modeling</a>
+            <br />
+            <a href="https://courses.edx.org/certificates/6199a7d4684240e2aaeed7eeb0fafdf4">CSE6040x: Computing for Data Analysis</a>
+        </span>
+    </span>
 </div>
 
 <div class="experience">
-<h3 class="experience-location" data-alt="Harvard Extension">Harvard Extension</h3>
-<span class="experience-position">STAT E-110 Introduction to Probability<span class="experience-time">2017</span></span>
-<span class="experience-position">STAT E-150: Intermediate Statistics: Methods and Modeling<span class="experience-time">2016</span></span>
+    <h3 class="experience-location" data-alt="Harvard Extension">Harvard Extension</h3>
+    <span class="experience-position">
+        STAT E-110 Introduction to Probability
+        <span class="experience-time">2017</span>
+        </span>
+    <span class="experience-position">
+        STAT E-150: Intermediate Statistics: Methods and Modeling
+        <span class="experience-time">2016</span>
+    </span>
 </div>
 
 <div class="experience">
-<h3 class="experience-location" data-alt="Massachussetts Institute of Technology">Massachussetts Institute of Technology</h3>
-<span class="experience-position">Big Data and Social Analytics<span class="experience-time">2016</span></span>
-<span class="experience-position">Data Science: Data to Insights<span class="experience-time">2016</span></span>
-</div>
-
+    <h3 class="experience-location" data-alt="Massachussetts Institute of Technology">Massachussetts Institute of Technology</h3>
+    <span class="experience-position">
+        Big Data and Social Analytics
+        <span class="experience-time">2016</span>
+        <span class="experience-more">
+            <a href="https://www.credential.net/10359024">Cert</a>
+        </span>
+    </span>
+    <span class="experience-position">
+        Data Science: Data to Insights
+        <span class="experience-time">2016</span>
+        <span class="experience-more">
+            <a href="https://mitxpro.mit.edu/certificates/8d64c1bcfbd34e979c8a860c09484626">Cert</a>
+        </span>
+    </span>
 </div>
