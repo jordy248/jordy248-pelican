@@ -11,6 +11,9 @@
   <meta name="google-site-verification" content="{{ GOOGLE_SITE_VERIFICATION }}">
   {% endif %}
 
+  <!-- ##### gtm ##### -->
+  {% include 'partials/tag_manager_head.html' %}
+
   <title>{% block title %}{{ SITENAME }}{% if SITESUBTITLE and SHOW_SITESUBTITLE_IN_HTML %} - {{ SITESUBTITLE }}{%
     endif %}{% endblock title %}</title>
 
@@ -116,6 +119,9 @@
       <div class="sk-cube sk-cube2"></div>
     </div>
   </div>
+
+  <!-- ##### gtm ##### -->
+  {% include 'partials/tag_manager_body.html' %}
 
   {% include 'partials/navigation.html' %}
 

@@ -100,6 +100,9 @@ SITEMAP = {
 # Analytics
 GOOGLE_ANALYTICS = "UA-00000-0"
 
+# GTM
+GOOGLE_TAG_MANAGER = "GTM-TJN5JZ6"
+
 # Comments
 DISQUS_SITENAME = "jordynelson"
 
