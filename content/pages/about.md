@@ -55,6 +55,7 @@ via
 <li>caret</li>
 <li>MASS</li>
 <li>glmnet</li>
+<li>survival</li>
 <li>BTYD</li>
 <li>JAGS</li>
 <li>simmer</li>
