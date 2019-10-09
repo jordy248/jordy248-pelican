@@ -1,5 +1,5 @@
 Title: 2019-09-27 Riddler
-Date: 2019-09-29 08:22
+Date: 2019-09-29 14:48
 Category: Riddler
 Tags: FiveThirtyEight, Riddler, R, probability, negative binomial, simulation, baseball
 Slug: riddler-2019-09-27

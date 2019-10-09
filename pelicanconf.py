@@ -78,7 +78,8 @@ AUTHORS_SAVE_AS = 'authors.html'
 ### Plugins ###
 ### ------- ###
 PLUGINS = ['sitemap',
-           'neighbors'
+           'neighbors',
+           'render_math'
 ]
 PLUGIN_PATHS = ['pelican-plugins']
 

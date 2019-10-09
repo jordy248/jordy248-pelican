@@ -1,5 +1,5 @@
 Title: 2019-04-05 Riddler
-Date: 2019-04-07 08:22
+Date: 2019-04-07 09:17
 Category: Riddler
 Tags: FiveThirtyEight, Riddler, R, probability, combinatorics, simulation
 Slug: riddler-2019-04-05
