@@ -6,7 +6,7 @@ Slug: riddler-2019-10-04
 Cover: theme/assets_images/NeONBRAND-dollar-unsplash.jpg
 Cover_Credits: Gary NeONBRAND/Unsplash
 Authors: Jordy Nelson
-Summary: Final answer?
+Summary: Should we lock in our answer for $1MM?
 Comments: True
 
 The most recent [Riddler Express](https://fivethirtyeight.com/features/who-wants-to-be-a-riddler-millionaire/) puts you in the hot seat for a gameshow-themed conditional probability adventure -- all without even mentioning Monty Hall or goats!
