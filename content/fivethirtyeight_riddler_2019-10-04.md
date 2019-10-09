@@ -50,7 +50,7 @@ Let's break this down a bit:
             + The probability of this is the probability that B is correct ($P(A)=70\%$) times the probability that B remains after the 50:50 given that B is correct ($P(B|A)=100\%$)
         * B can remain after the 50:50 **if B is incorrect and it happens to be returned by 50:50 along with the correct answer**:
             + The probability of this is the probability that B is incorrect (or 30%) times the probability that B remains after the 50:50. If we assume that the answer is, say, A (though this holds regardless of which non-B answer we assume is correct), possible tuples resulting from the 50:50 are $\{A,B\}$, $\{A,C\}$, and $\{A,D\}$. We notice that B appears in 1 out of 3, or 30%.
-        * Thus, the probability that B remains after the 50:50 is $(0.7 * 1)+(0.3 * 0.3)=79%$
+        * Thus, the probability that B remains after the 50:50 is $(0.7 * 1)+(0.3 * 0.3)=0.79$
 
 Now we can just plug in these quantities and solve:
 
@@ -59,4 +59,3 @@ $P(A|B)=\frac{1 * 0.7}{0.79}$
 Which gives us $P(A|B)=\frac{0.7}{0.79}=0.8860759$
 
 So if we originally assign 70% credibility to answer B and it remains after our 50:50, we can then reasonably assign 88.6% credibility to answer B, according to Bayes' Theorem.
-

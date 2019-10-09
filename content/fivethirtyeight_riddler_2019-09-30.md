@@ -9,7 +9,7 @@ Authors: Jordy Nelson
 Summary: Who will win the Riddler Fall Classic?
 Comments: True
 
-This past weekend's [Riddler Classic](https://fivethirtyeight.com/features/which-baseball-team-will-win-the-riddler-fall-classic/) pits three baseball teams against one another in a Goldilocks-esque showdown. In the Riddler Baseball League, does it pay to stack your team with infrequent sluggers? Frequent pitch magnets? Or take a tack somewhere down the middle? 
+This past weekend's [Riddler Classic](https://fivethirtyeight.com/features/which-baseball-team-will-win-the-riddler-fall-classic/) pits three baseball teams against one another in a Goldilocks-esque showdown. In the Riddler Baseball League, does it pay to stack your team with infrequent sluggers? Frequent pitch magnets? Or take a tack somewhere down the middle with a jacks-of-all-bases team? 
 
 > Riddler League Baseball, also known as the RLB, consists of three teams: the Mississippi Moonwalkers, the Delaware Doubloons and the Tennessee Taters.
 
@@ -416,7 +416,7 @@ season_team_res_df <- data.frame(team = unique(c(season_res_df$team_1, season_re
          win_rate = n_wins / n_games)
 ```
 
-And with the final runs of the seemingly never-ending Riddler Fall Classic, we have the following:
+And with the final runs of the seemingly never-ending Riddler Fall Classic tallied, we have the following:
 
 |team        | n_games | n_wins| win_rate|
 |:-----------|--------:|------:|--------:|
@@ -431,4 +431,3 @@ And the specific matchups:
 |Doubloons&#124;Taters      |  100000|       28360|       71640|        9.44457|    0.28360|    0.71640|
 |Moonwalkers&#124;Doubloons |  100000|       48830|       51170|        9.73793|    0.48830|    0.51170|
 |Moonwalkers&#124;Taters    |  100000|       26922|       73078|        9.44819|    0.26922|    0.73078|
-
