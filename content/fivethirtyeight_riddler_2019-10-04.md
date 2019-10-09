@@ -29,16 +29,16 @@ In other words, the conditional probability of event A given event B is equal to
 
 In our case, this means: 
 
-$P(\text{B is the answer}|\text{50:50 leaves B and one other answer})$
+$P(\text{B is the answer}|\text{50:50 returns B})$
 $=$
-$\frac{P(\text{50:50 leaves B and one other answer}|\text{B is the answer}) * P(\text{B is the answer})}{P(\text{50:50 leaves B and one other answer})}$
+$\frac{P(\text{50:50 returns B}|\text{B is the answer}) * P(\text{B is the answer})}{P(\text{50:50 returns B})}$
 
 Let's break this down a bit:
 
-* $P(\text{B is the answer}|\text{50:50 leaves B and one other answer})$ -- or $P(A|B)$ -- is the unknown conditional probability we are trying to solve for.
-* $P(\text{50:50 leaves B and one other answer}|\text{B is the answer})$ -- or $P(B|A)$ -- is equal to 100% because if B is the answer, 50:50 will have to leave it (as well as one other answer that we don't care about specifically).
+* $P(\text{B is the answer}|\text{50:50 returns B})$ -- or $P(A|B)$ -- is the unknown conditional probability we are trying to solve for.
+* $P(\text{50:50 returns B}|\text{B is the answer})$ -- or $P(B|A)$ -- is equal to 100% because if B is the answer, 50:50 will have to leave it (as well as one other answer that we don't care about specifically).
 * $P(\text{B is the answer})$ -- or $P(A)$ -- is the event we assign 70% marginal credibility to.
-* $P(\text{50:50 leaves B and one other answer})$ -- or $P(B)$ -- can be assigned 79% credibility.
+* $P(\text{50:50 returns B})$ -- or $P(B)$ -- can be assigned 79% credibility.
     * There are two cases in which B can remain after the 50:50, and we need to account for both of them:
         * B can remain after the 50:50 *if B is correct*:
             + The probability of this is the probability that B is correct ($P(A)=70\%$) times the probability that B remains after the 50:50 given that B is correct ($P(B|A)=100\%$)
