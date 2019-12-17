@@ -32,7 +32,7 @@ Kasparov: $\frac{3}{48} - \frac{40}{48} = \frac{3}{8}$
 
 And because Karpov has already won five games on his way to six, Kasparov needs to win 3 in a row to claim his own victory. 
 
-Thus, this becomes a question for the binomial distribution. The binomial distribution takes the parameters $n$ and $p$ and the form $X ~ Bin(n,p) = {n \choose x} * p^k * (1-p)^{(n-k)}$
+Thus, this becomes a question for the binomial distribution. The binomial distribution takes the parameters $n$ and $p$ and the form $X ~ Bin(n,p) = {n \choose k} * p^k * (1-p)^{(n-k)}$
 
 In Kasparov's case, this becomes: ${3 \choose 3} * (\frac{3}{8})^3 * (1-\frac{3}{8})^{(3-3)}$. This is the same as $\frac{5}{8}^3 = \frac{27}{512}$. Or 0.05273438.
 
