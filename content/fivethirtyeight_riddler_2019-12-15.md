@@ -16,7 +16,7 @@ MathJax.Hub.Config({
 });
 </script>
 
-The newest [Riddler Express](https://fivethirtyeight.com/features/can-you-solve-a-particularly-prismatic-puzzle/) is a probability puzzler that tests our fortitude to "choose K" (Karpov or Kasparov!) in one of chess's great matches.
+The newest [Riddler Express](https://fivethirtyeight.com/features/can-you-solve-a-particularly-prismatic-puzzle/) is a probability puzzler that asks us to "choose K" (Karpov or Kasparov!) in one of chess's great matches.
 
 > From Anna Engelsone comes a riddle about a historic chess battle:
 
@@ -24,11 +24,11 @@ The newest [Riddler Express](https://fivethirtyeight.com/features/can-you-solve-
 
 > We can deduce from the games Karpov and Kasparov played that, independently of other games, Karpov’s chances of winning each game were 5/48, Kasparov’s chances were 3/48, and the chances of a draw were 40/48. Had the match been allowed to continue indefinitely, what would have been Kasparov’s chances of eventually winning the match?
 
-Draws don't give us any additional information on the slog to a winner, so let's go ahead and discard them. 
+Draws don't give us any additional information on the slog to a winner, so let's go ahead and ignore them, leaving us with these new probabilities:
 
-Karpov: $\frac{5}{48} - \frac{40}{48} = \frac{5}{8}$
+Karpov: $\frac{5}{8}$
 <br />
-Kasparov: $\frac{3}{48} - \frac{40}{48} = \frac{3}{8}$
+Kasparov: $\frac{3}{8}$
 
 And because Karpov has already won five games on his way to six, Kasparov needs to win 3 in a row (before Karpov wins one more) to claim his own victory. 
 
