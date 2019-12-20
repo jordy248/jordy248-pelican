@@ -32,9 +32,9 @@ Kasparov: $\frac{3}{8}$
 
 And because Karpov has already won five games on his way to six, Kasparov needs to win 3 in a row (before Karpov wins one more) to claim his own victory. 
 
-This then becomes a question for the binomial distribution. The binomial distribution takes the parameters $n$ and $p$ and the form $X ~ Bin(n,p) = {n \choose k} * p^k * (1-p)^{(n-k)}$
+This then becomes a question for the binomial distribution. The binomial distribution takes the parameters $n$ and $p$ and the form $X \sim Bin(n,p) = {n \choose k} * p^k * (1-p)^{(n-k)}$ (where $n$ is the number of trials, $p$ is the probability of the event occurring, and $k$ is the number of times we want the event to occur).
 
-In Kasparov's case, this becomes: ${3 \choose 3} * (\frac{3}{8})^3 * (1-\frac{3}{8})^{(3-3)}$. This is the same as $\frac{5}{8}^3 = \frac{27}{512}$. Or 0.05273438.
+In Kasparov's case, this becomes: ${3 \choose 3} * (\frac{3}{8})^3 * (1-\frac{3}{8})^{(3-3)}$. This is the same as $\frac{3}{8}^3 = \frac{27}{512}$. Or 0.05273438.
 
 And as always, we can simulate with R:
 
