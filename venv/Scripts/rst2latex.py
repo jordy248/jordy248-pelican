@@ -1,4 +1,4 @@
-#!c:\users\nelsonj\dropbo~1\projects\misc\jn\projects\jordy248\venv\scripts\python.exe
+#!c:\users\12482\documents\jordy248\venv\scripts\python.exe
 
 # $Id: rst2latex.py 5905 2009-04-16 12:04:49Z milde $
 # Author: David Goodger <goodger@python.org>

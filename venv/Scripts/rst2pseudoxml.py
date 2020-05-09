@@ -1,4 +1,4 @@
-#!c:\users\nelsonj\dropbo~1\projects\misc\jn\projects\jordy248\venv\scripts\python.exe
+#!c:\users\12482\documents\jordy248\venv\scripts\python.exe
 
 # $Id: rst2pseudoxml.py 4564 2006-05-21 20:44:42Z wiemann $
 # Author: David Goodger <goodger@python.org>

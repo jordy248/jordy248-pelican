@@ -1,4 +1,4 @@
-#!c:\users\nelsonj\dropbo~1\projects\misc\jn\projects\jordy248\venv\scripts\python.exe
+#!c:\users\12482\documents\jordy248\venv\scripts\python.exe
 
 # $Id: rst2odt.py 5839 2009-01-07 19:09:28Z dkuhlman $
 # Author: Dave Kuhlman <dkuhlman@rexx.com>

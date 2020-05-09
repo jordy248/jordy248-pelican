@@ -1,6 +1,6 @@
-#!c:\users\nelsonj\dropbo~1\projects\misc\jn\projects\jordy248\venv\scripts\python.exe
+#!c:\users\12482\documents\jordy248\venv\scripts\python.exe
 
-# Author: 
+# Author:
 # Contact: grubert@users.sf.net
 # Copyright: This module has been placed in the public domain.
 

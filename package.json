@@ -31,22 +31,22 @@
   "dependencies": {
     "http": "0.0.0",
     "mkdirp": "^0.5.1",
-    "sass": "^1.17.3",
+    "sass": "^1.26.5",
     "uglifyjs": "^2.4.11"
   },
   "devDependencies": {
+    "axios": ">=0.18.1",
     "concurrently": "^4.1.0",
-    "lite-server": "^2.4.0",
-    "mocha": "^6.0.2",
-    "node-sass": "^4.11.0",
-    "spinkit": "^1.2.5",
-    "mixin-deep": ">=1.3.2",
-    "set-value": ">=2.0.1",
+    "fstream": ">=1.0.12",
+    "js-yaml": ">=3.13.1",
+    "lite-server": "^2.5.4",
     "lodash": ">=4.17.13",
     "lodash.mergewith": ">=4.6.2",
-    "js-yaml": ">=3.13.1",
-    "fstream": ">=1.0.12",
-    "axios": ">=0.18.1",
+    "mixin-deep": ">=1.3.2",
+    "mocha": "^7.1.2",
+    "node-sass": "^4.14.1",
+    "set-value": ">=2.0.1",
+    "spinkit": "^1.2.5",
     "tar": ">=2.2.2"
   }
 }

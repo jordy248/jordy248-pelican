@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
+import datetime
 
 ### --------------------- ###
 ### general site settings ###
@@ -73,6 +74,9 @@ TAGS_SAVE_AS = 'tags.html'
 AUTHOR_URL = 'author/{slug}'
 AUTHOR_SAVE_AS = 'author/{slug}.html'
 AUTHORS_SAVE_AS = 'authors.html'
+
+# Year
+CURR_YEAR = datetime.datetime.now().year
 
 ### ------- ###
 ### Plugins ###

@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://jordynelson.io/sitemap.xml

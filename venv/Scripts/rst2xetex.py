@@ -1,4 +1,4 @@
-#!c:\users\nelsonj\dropbo~1\projects\misc\jn\projects\jordy248\venv\scripts\python.exe
+#!c:\users\12482\documents\jordy248\venv\scripts\python.exe
 
 # $Id: rst2xetex.py 7847 2015-03-17 17:30:47Z milde $
 # Author: Guenter Milde
