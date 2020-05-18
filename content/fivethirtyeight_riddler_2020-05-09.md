@@ -114,7 +114,7 @@ So, in essence, peeking any seeing a six doesn't give us any important informati
 
 Intuitively, this immediately means that the probability of the other side of our tile also being a six (i.e., our tile being a double) is the same as the probability of drawing *any* double: 1/4. 
 
-The joint probability $$P({drawing \enspace a \enspace (6,6)} \cap {seeing \enspace a \enspace 6})$$ is the probability of drawing a $$(6,6)$$ tile &ndash; or 1/28.
+The joint probability $$P({drawing \enspace a \enspace (6,6)} \cap {seeing \enspace a \enspace 6})$$ is the probability of drawing a (6,6) tile &ndash; or 1/28.
 
 So we end up with:
 
