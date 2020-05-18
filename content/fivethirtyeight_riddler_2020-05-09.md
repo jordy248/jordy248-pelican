@@ -31,11 +31,12 @@ With 7 dot options for each side of each domino tile, there are $\frac{{7 \choos
 For fun, let's simulate:
 
 ```{python}
-import itertools
 import numpy as np
 from random import choice, seed
 from scipy.stats import binom
 from scipy.special import comb
+from itertools import combinations, chain
+from collections import Counter
 
 seed(42)
 

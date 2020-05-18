@@ -224,11 +224,12 @@ MathJax.Hub.Config({
 </blockquote>
 <p>With 7 dot options for each side of each domino tile, there are <span class="math">\(\frac{{7 \choose 1}}{{7 \choose 1} + {7 \choose 2}}\)</span> ways of drawing a double &ndash; or 25%, which intuitively makes sense given that there are 7 doubles out of 28 total tiles. </p>
 <p>For fun, let's simulate:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">itertools</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">choice</span><span class="p">,</span> <span class="n">seed</span>
 <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">binom</span>
 <span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">comb</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">combinations</span><span class="p">,</span> <span class="n">chain</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
 
 <span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 
