@@ -81,22 +81,42 @@ dupe_draws / n
 ```
 Which gives us `0.25144`.
 
-If we first peek at one of the sides and notice a 6 after drawing a domino, there is 1 way for a 6 to be on the other side and ${6 \choose 1}$ ways for it to be a number other than 6. In other words, $\frac{{1 \choose 1}}{{6 \choose 1} + {1 \choose 2}}$ &ndash; or about 14.3%. 
+If we first peek at one of the sides and notice a 6 after drawing a domino, things get a bit trickier. 
+
+Conditional probability tells us how to find the probability of some event of interest given some other event:
+
+$$P(A | B) = \frac{P(A \cap B)}{P(B)}$$
+
+Or:
+
+$$P({drawing \enspace a \enspace (6,6)} | {seeing \enspace a \enspace 6}) = \frac{P({drawing \enspace a \enspace (6,6)} \cap {seeing \enspace a \enspace 6})}{P({seeing \enspace a \enspace 6})}$$
+
+But how much information does peeking and seeing a six really give us?
 
 ```{python}
-# Q2
-six_six = 0
-n = 100000
 d = Dominoes(faces = range(0, 7),
              sides = 2)
 d.gen_dominoes()
-dom_six = [v for v in d.dominoes if v[0] == 6 or v[1] == 6]
 
-for i in range(0, n):
-    draw = choice(dom_six)
-    if draw[0] == draw[1]:
-        six_six += 1
+# tally up frequencies of dot counts on faces (tile halves)
+#face_counts = Counter(y for x in d.dominoes for y in x)
+face_counts = Counter(chain(*d.dominoes))
 
-six_six / n
+# faces with six dots
+six_dot_faces = face_counts[6]
+
+# proability of seeing a six
+six_dot_faces / sum([v for v in face_counts.values()])
 ```
-Which gives us `0.14254`.
+Which gives us `0.14285714285714285` &ndash; or 1/7.
+
+So, in essence, peeking any seeing a six doesn't give us any important information (other than knowing that we're looking at a valid domino face).
+
+Intuitively, this immediately means that the probability of the other side of our tile also being a six (i.e., our tile being a double) is the same as the probability of drawing *any* double: 1/4. 
+
+The joint probability $$P({drawing \enspace a \enspace (6,6)} \cap {seeing \enspace a \enspace 6})$$ is the probability of drawing a $$(6,6)$$ tile &ndash; or 1/28.
+
+So we end up with:
+
+$$P(A | B) = \frac{1/28}{P(1/7)} = 1/4$$
+
