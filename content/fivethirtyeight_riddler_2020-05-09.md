@@ -1,7 +1,7 @@
 Title: 2020-05-09 Riddler
 Date: 2020-05-09 14:42
 Category: Riddler
-Tags: FiveThirtyEight, Riddler, R, probability, simulation, binomial
+Tags: FiveThirtyEight, Riddler, R, probability, simulation, conditional probability, joint probability
 Slug: riddler-2020-05-09
 Cover: theme/assets_images/tatiana-rodriguez-XEn-Pvif5Q0-unsplash.jpg
 Cover_Credits: Tatiana Rodriguez/Unsplash
@@ -26,7 +26,7 @@ The newest [Riddler Express](https://fivethirtyeight.com/features/can-you-eat-an
 
 > Question 2: Now you pick a random tile from the set and uncover only one side, revealing that it has six dots. What’s the probability that this tile is a double, with six on both sides?
 
-With 7 dot options for each side of each domino tile, there are $\frac{{7 \choose 1}}{{7 \choose 1} + {7 \choose 2}}$ ways of drawing a double &ndash; or 25%, which intuitively makes sense given that there are 7 doubles out of 28 total tiles. 
+With 7 dot options for each face (each half) of each domino tile, there are $\frac{{7 \choose 1}}{{7 \choose 1} + {7 \choose 2}}$ ways of drawing a double &ndash; or 25%, which intuitively makes sense given that there are 7 doubles out of 28 total tiles. 
 
 For fun, let's simulate:
 
@@ -84,7 +84,7 @@ Which gives us `0.25144`.
 
 If we first peek at one of the sides and notice a 6 after drawing a domino, things get a bit trickier. 
 
-Conditional probability tells us how to find the probability of some event of interest given some other event:
+Conditional probability tells us how to find the probability of some event of interest (that we don't know the probability of) given some other event (that we do know the probability of):
 
 $$P(A | B) = \frac{P(A \cap B)}{P(B)}$$
 
@@ -93,6 +93,8 @@ Or:
 $$P({drawing \enspace a \enspace (6,6)} | {seeing \enspace a \enspace 6}) = \frac{P({drawing \enspace a \enspace (6,6)} \cap {seeing \enspace a \enspace 6})}{P({seeing \enspace a \enspace 6})}$$
 
 But how much information does peeking and seeing a six really give us?
+
+Let's quickly investigate the probability of looking at a random face and seeing a six.
 
 ```{python}
 d = Dominoes(faces = range(0, 7),
@@ -111,13 +113,15 @@ six_dot_faces / sum([v for v in face_counts.values()])
 ```
 Which gives us `0.14285714285714285` &ndash; or 1/7.
 
-So, in essence, peeking any seeing a six doesn't give us any important information (other than knowing that we're looking at a valid domino face).
+Peeking and seeing a six doesn't give us any important information (other than knowing that we're looking at a valid domino face).
 
 Intuitively, this immediately means that the probability of the other side of our tile also being a six (i.e., our tile being a double) is the same as the probability of drawing *any* double: 1/4. 
 
-The joint probability $$P({drawing \enspace a \enspace (6,6)} \cap {seeing \enspace a \enspace 6})$$ is the probability of drawing a (6,6) tile &ndash; or 1/28.
+We can confirm this by computing the joint probability $$P({drawing \enspace a \enspace (6,6)} \cap {seeing \enspace a \enspace 6})$$ and plugging and chugging in our conditional probability formulation.
+
+$$P({drawing \enspace a \enspace (6,6)} \cap {seeing \enspace a \enspace 6})$$ is simply the probability of drawing the (6,6) tile &ndash; which is 1/28.
 
 So we end up with:
 
-$$P(A | B) = \frac{1/28}{P(1/7)} = 1/4$$
+$$P({drawing \enspace a \enspace (6,6)} | {seeing \enspace a \enspace 6}) = \frac{1/28}{P(1/7)} = 1/4$$
 

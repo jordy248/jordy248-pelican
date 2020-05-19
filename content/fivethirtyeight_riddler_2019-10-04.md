@@ -22,7 +22,7 @@ The most recent [Riddler Express](https://fivethirtyeight.com/features/who-wants
 
 > You’ve made it to the $1 million question, but it’s a tough one. Out of the four choices, A, B, C and D, you’re 70 percent sure the answer is B, and none of the remaining choices looks more plausible than another. You decide to use your final lifeline, the 50:50, which leaves you with two possible answers, one of them correct. Lo and behold, B remains an option! How confident are you now that B is the correct answer?
 
-> Let's first summarize the probabilities and values of success (as success is in the eye of the batter) for each team:
+Let's first summarize the probabilities and values of success (as success is in the eye of the batter) for each team:
 
 If we begin by allocating 70% of our credibility to B and evenly distribute the remaining 30% among the remaining 3 answers (A, C, and D), it's tempting to believe that elimating two of the remaining 3 options means that their share of the 30% of our credibility all flows to answer B, bumping it to 90%.
 
@@ -30,14 +30,14 @@ But is there a better way to reallocate our credibility in light of our 50:50?
 
 There is if we apply Bayes' Theorem! It gives us a mechanism for updating our prior beliefs (expressed in terms of probabilities or credibilities) in light of additional information.
 
-Bayes' Theorem takes the general form: $P(A|B)=\frac{P(B|A) * P(A)}{P(B)}$
+Bayes' Theorem takes the general form: $P(A|B)=\frac{P(B|A)P(A)}{P(B)}$
 
 In other words, the conditional probability of event A given event B is equal to the conditional probability of event B given event A multiplied by the independent (or marginal) probability of event A all divided by the marginal probability of event B.
 
 In our case, this means: 
 
 <div class="mathjax-scale">$$P(\text{B is the answer}|\text{50:50 returns B})=$$</div>
-<div class="mathjax-scale">$$\frac{P(\text{50:50 returns B}|\text{B is the answer})*P(\text{B is the answer})}{P(\text{50:50 returns B})}$$</div>
+<div class="mathjax-scale">$$\frac{P(\text{50:50 returns B}|\text{B is the answer})P(\text{B is the answer})}{P(\text{50:50 returns B})}$$</div>
 
 Let's break this down a bit:
 
