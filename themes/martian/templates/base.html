@@ -83,6 +83,17 @@
   <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/code_blocks/github.css" rel="stylesheet">
   {% endif %}
 
+  <!-- mathjax -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     "HTML-CSS": {linebreaks: {automatic: true},
+                  scale: 66
+                 },
+      SVG: {linebreaks: {automatic: true} },
+      CommonHTML: {scale: 66}
+    });
+    </script>
+
   {% if CSS_OVERRIDE %}
   <!-- CSS specified by the user -->
   {% for css in CSS_OVERRIDE %}

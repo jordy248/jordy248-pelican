@@ -9,15 +9,6 @@ Authors: Jordy Nelson
 Summary: Bayesian Hierarchical Models Are Your Oyster
 Comments: True
 
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
- "HTML-CSS": { linebreaks: { automatic: true } },
-         SVG: { linebreaks: { automatic: true } },
-         CommonHTML: { scale: 66 }
-});
-</script>
-
-
 Multilevel models (also known as linear mixed models) are commonly used to model both fixed and linear effects. In the classical statistical sense, fixed effects are parameters that do not vary (there's some fixed coefficient that describes the true relationship between the parameter and independent variable for the population), while random effects are treated as random variables.[ref]The definitions of fixed and random effects can shift, <a target="_blank" href="https://statmodeling.stat.columbia.edu/2005/01/25/why_i_dont_use/">as Andrew Gelman notes</a>.[/ref]
 
 Multilevel models are particular useful when the data have a hierarchical organization. (For instance, students may be grouped under teachers, who are in turn grouped under schools, which are in turn grouped under districts, which in turn...)
