@@ -83,8 +83,8 @@ CURR_YEAR = datetime.datetime.now().year
 ### ------- ###
 PLUGINS = ['sitemap',
            'neighbors',
-           'render_math'
-]
+           'render_math',
+           'simple_footnotes']
 PLUGIN_PATHS = ['pelican-plugins']
 
 # Sitemap
