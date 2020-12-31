@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "gulp buildCss",
     "compile-sass": "node-sass ./themes/martian/static/css/sass/main.scss ./themes/martian/static/css/main.css --source-map=true",
     "compile-pelican": "rm output -r && pelican && robocopy \".\" \".\\output\" \"robots.txt\"",
     "run-lite-server": "lite-server --config=./bs-config.json",
