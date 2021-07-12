@@ -9,7 +9,7 @@ import datetime
 SITEURL = 'https://jordynelson.io'
 AUTHOR = u'Jordy Nelson'
 
-SITENAME                  = u'Jordy Nelson'
+SITENAME = u'Jordy Nelson'
 #SITESUBTITLE              = u''
 SHOW_SITESUBTITLE_IN_HTML = False
 
@@ -103,7 +103,7 @@ SITEMAP = {
 }
 
 # Analytics
-GOOGLE_ANALYTICS = "UA-00000-0"
+GOOGLE_ANALYTICS = "UA-78411303-1"
 
 # GTM
 GOOGLE_TAG_MANAGER = "GTM-TJN5JZ6"
@@ -135,13 +135,13 @@ THEME_STATIC_DIR = 'theme'
 # list of theme static paths to copy to THEME_STATIC_DIR
 THEME_STATIC_PATHS = ['static',
                       'assets'
-                     ]
+                      ]
 COLOR_SCHEME_CSS = 'monokai.css'
 DISPLAY_PAGES_ON_MENU = False
 DISPLAY_CATEGORIES_ON_MENU = False
-MENUITEMS = [('home', '/index.html'), 
+MENUITEMS = [('home', '/index.html'),
              ('about', '/pages/about.html')
-            ]
+             ]
 
 ### ------------------------- ###
 ### additional theme settings ###
@@ -149,23 +149,33 @@ MENUITEMS = [('home', '/index.html'),
 MP_BOOTSTRAPPED = True
 MP_USE_FONTAWESOME = True
 CSS_OVERRIDE = [
-#                '{0}/{1}/css/normalize.css'.format(SITEURL, THEME_STATIC_DIR), # normalize styles
-#                '{0}/{1}/css/main.css'.format(SITEURL, THEME_STATIC_DIR),      # main custom styles
-                'theme/css/normalize.css',                                     # normalize styles (DEV VERSION)
-                'theme/css/main.css'                                           # main custom styles (DEV VERSION)
-]    
+    #                '{0}/{1}/css/normalize.css'.format(SITEURL, THEME_STATIC_DIR), # normalize styles
+    #                '{0}/{1}/css/main.css'.format(SITEURL, THEME_STATIC_DIR),      # main custom styles
+    # normalize styles (DEV VERSION)
+    'theme/css/normalize.css',
+    # main custom styles (DEV VERSION)
+    'theme/css/main.css'
+]
 JS_OVERRIDE = [
-#                '{0}/{1}/js/script.js'.format(SITEURL, THEME_STATIC_DIR),    # normalize styles
-#                '{0}/{1}/js/myscript.js'.format(SITEURL, THEME_STATIC_DIR), # main custom styles
-                'theme/js/script.js',                                       # normalize styles (DEV VERSION)
-                'theme/js/myscript.js'                                      # main custom styles (DEV VERSION)
-]              
+    #                '{0}/{1}/js/script.js'.format(SITEURL, THEME_STATIC_DIR),    # normalize styles
+    #                '{0}/{1}/js/myscript.js'.format(SITEURL, THEME_STATIC_DIR), # main custom styles
+    # normalize styles (DEV VERSION)
+    'theme/js/script.js',
+    # main custom styles (DEV VERSION)
+    'theme/js/myscript.js'
+]
 
-FAVICON = '{0}/{1}/assets_images/favicon_jn.png'.format(SITEURL, THEME_STATIC_DIR) # hero, live
-FAVICON = 'theme/assets_images/favicon_jn.png'                                     # hero, dev
+# hero, live
+FAVICON = '{0}/{1}/assets_images/favicon_jn.png'.format(
+    SITEURL, THEME_STATIC_DIR)
+# hero, dev
+FAVICON = 'theme/assets_images/favicon_jn.png'
 
-HEADER_COVER = '{0}/{1}/assets_images/crater.jpg'.format(SITEURL, THEME_STATIC_DIR) # hero, live
-HEADER_COVER = 'theme/assets_images/crater.jpg'                                     # hero, dev
+# hero, live
+HEADER_COVER = '{0}/{1}/assets_images/crater.jpg'.format(
+    SITEURL, THEME_STATIC_DIR)
+# hero, dev
+HEADER_COVER = 'theme/assets_images/crater.jpg'
 
 # list of article.title to ignore in default pagination
 PAGINATION_IGNORE = ['404', 'about']
@@ -175,12 +185,12 @@ PAGINATION_IGNORE = ['404', 'about']
 ### ------- ###
 
 AUTHORS_BIO = {
-   "jordy": {
-     "name": "jordy",
-     "cover": "theme/assets_images/jordy.jpg",
-     "image": "theme/assets_images/jordy.jpg",
-     "website": "https://jordynelson.io",
-     "location": "Baltimore",
-     "bio": "This is the place for a small biography with max 200 characters. Well, now 100 are left. Cool, hugh?"
-   }
- }
+    "jordy": {
+        "name": "jordy",
+        "cover": "theme/assets_images/jordy.jpg",
+        "image": "theme/assets_images/jordy.jpg",
+        "website": "https://jordynelson.io",
+        "location": "Baltimore",
+        "bio": "This is the place for a small biography with max 200 characters. Well, now 100 are left. Cool, hugh?"
+    }
+}
